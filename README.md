@@ -16,6 +16,6 @@ The CLI and the page both return the answer when the turn finishes. Traces go to
 
 Put `ANTHROPIC_API_KEY` in `.env` before extracting the catalog or chatting.
 
-Saved article text is copyrighted. Keep this repo private.
+Saved article text is copyrighted.
 
 At about 1,000 articles the catalog filters first, ingest only embeds articles whose text changed, and Chroma holds the vectors on disk.
