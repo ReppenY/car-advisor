@@ -1,0 +1,2414 @@
+{
+  "runs_per_case": 1,
+  "cases": [
+    {
+      "id": "polo-en",
+      "category": "reviewed",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-polo-en-r1-ea1ff055",
+          "latency_s": 6.36,
+          "tokens": {
+            "input": 4350,
+            "output": 165
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "volkswagenpolo"
+              }
+            }
+          ],
+          "answer": "The Volkswagen Polo that was tested comes in two versions: the Style at 116,000 NIS and the Style Plus at 129,000 NIS.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant incorrectly states that the tested Polo comes in two versions, when the behavior specifies that the tested car is specifically the Style Plus at 129,000 NIS, not the Style at 116,000 NIS."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "palisade-he",
+      "category": "reviewed",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-palisade-he-r1-102a9446",
+          "latency_s": 9.06,
+          "tokens": {
+            "input": 7149,
+            "output": 429
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יונדאיפאליסייד"
+              }
+            }
+          ],
+          "answer": "יונדאי פאליסייד מגיעה במספר גרסאות:\n\n**Excellence** - 350,000 ₪ (8 מושבים) או 358,000 ₪ (7 מושבים)\n\n**Calligraphy** - 390,000 ₪ או 411,000 ₪ (7 מושבים)",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant quoted a Palisade price from the review, stating that the Excellence range starts at 350,000 NIS, and mentioned other trims with their respective prices without inventing information."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "g6-he",
+      "category": "reviewed",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-g6-he-r1-f4dfcc84",
+          "latency_s": 5.24,
+          "tokens": {
+            "input": 4448,
+            "output": 167
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "אקספנגg6"
+              }
+            }
+          ],
+          "answer": "אקספנג G6 בגרסת פרפורמנס עולה 255,000 ₪.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly stated the Performance version price as 255,000 NIS and did not present any other version's price as the Performance price."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "polo-110",
+      "category": "trims",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-polo-110-r1-36ef2da8",
+          "latency_s": 10.67,
+          "tokens": {
+            "input": 14644,
+            "output": 400
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "פולקסווגנפולו"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "car": "פולקסווגנפולו",
+                "query": "110 כ\"ס מחיר גרסה"
+              }
+            }
+          ],
+          "answer": "פולקסווגן פולו בגרסת 110 כ\"ס שנבחנה עולה 129,000 שקלים. זוהי גרסת 'סטייל פלוס'.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly stated the price of 129,000 NIS for the 110 hp version that was tested."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "calligraphy",
+      "category": "trims",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-calligraphy-r1-4d98ae34",
+          "latency_s": 6.48,
+          "tokens": {
+            "input": 4507,
+            "output": 184
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יונדאיפאליסייד"
+              }
+            }
+          ],
+          "answer": "יונדאי פאליסייד בגרסת קליגרפי עולה 390,000 ₪ או 411,000 ₪, שתיהן עם 7 מקומות ישיבה.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly provided the Calligraphy trim prices as 390,000 NIS and 411,000 NIS as specified in the behavior."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "excellence",
+      "category": "trims",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-excellence-r1-28e8de5b",
+          "latency_s": 5.79,
+          "tokens": {
+            "input": 4529,
+            "output": 212
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יונדאיפאליסייד"
+              }
+            }
+          ],
+          "answer": "יונדאי פאליסייד בגרסת אקסלנס עולה 350,000 ₪ בגרסת 8 מושבים ו-358,000 ₪ בגרסת 7 מושבים.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly provided the Excellence trim prices as 350,000 NIS for 8 seats and 358,000 NIS for 7 seats without confusing them with Calligraphy prices."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "mazda2",
+      "category": "spelling",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-mazda2-r1-2bf00dd7",
+          "latency_s": 8.29,
+          "tokens": {
+            "input": 10022,
+            "output": 291
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "מאזדה2"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "car": "מאזדה2",
+                "query": "צריכת דלק",
+                "files": [
+                  "yaris-mazda2.md"
+                ]
+              }
+            }
+          ],
+          "answer": "צריכת הדלק של מאזדה 2 היא 14.5 ק\"מ לליטר, לפי מבחן הדרכים שכלל גם קטעים דינמיים מהירים.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly stated that the Mazda 2's fuel consumption is 14.5 km/l, which matches the specified value in the behavior instruction."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "sportige",
+      "category": "spelling",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-sportige-r1-bc1a008e",
+          "latency_s": 4.76,
+          "tokens": {
+            "input": 4343,
+            "output": 165
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "sportage"
+              }
+            }
+          ],
+          "answer": "Two Sportage models were tested: the Long Urban at 189,900 NIS and the Premium at 210,000 NIS.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly identified that the Sportage Premium version is 210,000 NIS as specified in the behavior, and also mentioned another tested Sportage model at 189,900 NIS."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "palisade-typo",
+      "category": "spelling",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-palisade-typo-r1-c22ca1ec",
+          "latency_s": 5.9,
+          "tokens": {
+            "input": 4480,
+            "output": 162
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "פאליסייד"
+              }
+            }
+          ],
+          "answer": "הפליסייד בדרגת קליגרפי עולה 390,000 ₪ או 411,000 ₪, תלוי בגרסה.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly identified Palisade as פליסייד and provided the Calligraphy trim prices as 390,000 and 411,000 NIS."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "g6",
+      "category": "short",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-g6-r1-2e1bf972",
+          "latency_s": 7.3,
+          "tokens": {
+            "input": 9411,
+            "output": 252
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "model": "g6",
+                "make": null
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "car": "g6",
+                "query": "price cost"
+              }
+            }
+          ],
+          "answer": "The Xpeng G6 Performance costs 255,000 shekels (plus an additional 5,000 shekels for the orange color). The Performance version is 30,000 shekels more expensive than the Long Range version.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant provided the tested Performance price of 255,000 NIS for the Xpeng G6 and did not treat G6 as unknown."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "g7",
+      "category": "short",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-g7-r1-c6ebedeb",
+          "latency_s": 5.06,
+          "tokens": {
+            "input": 4277,
+            "output": 145
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "G7"
+              }
+            }
+          ],
+          "answer": "I couldn't find a car called \"G7\" in the reviews I have access to. Close names include Xpeng G6, Xpeng G9, and Xpeng P7. Were you looking for one of these?",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant says they couldn't find a car called G7, does not give it a price, mentions Xpeng G6 as a suggestion among other models, and avoids saying they are sure there is no G7."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "style-en",
+      "category": "ambiguous",
+      "pass_rate": {
+        "trajectory": "0/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-style-en-r1-dc0262fa",
+          "latency_s": 10.9,
+          "tokens": {
+            "input": 19951,
+            "output": 364
+          },
+          "tools": [
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "Style trim price"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "Style",
+                "model": null
+              }
+            },
+            {
+              "name": "compare",
+              "args": {
+                "files": [
+                  "polo.md",
+                  "yaris-mazda2.md"
+                ],
+                "aspect": "Style trim price"
+              }
+            }
+          ],
+          "answer": "רמת האבזור 'סטייל' מוצעת בשני רכבים:\n\n**פולקסווגן פולו סטייל** - 116,000 שקלים (מנוע 95 כ\"ס)\n\n**טויוטה יאריס סטייל** - 142,000 שקלים\n\nאיזה רכב התכוונת?",
+          "checks": {
+            "trajectory": {
+              "pass": false,
+              "problems": [
+                "called search_passages, compare"
+              ]
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant asked which car between the Volkswagen Polo and Toyota Yaris without picking one and without searching."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "style-he",
+      "category": "ambiguous",
+      "pass_rate": {
+        "trajectory": "0/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-style-he-r1-981e26e2",
+          "latency_s": 8.19,
+          "tokens": {
+            "input": 9568,
+            "output": 314
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "סטייל"
+              }
+            },
+            {
+              "name": "compare",
+              "args": {
+                "files": [
+                  "polo.md",
+                  "yaris-mazda2.md"
+                ],
+                "aspect": "מחיר גרסת סטייל"
+              }
+            }
+          ],
+          "answer": "יש שתי מכוניות עם גרסת סטייל במבחנים:\n\n**פולקסווגן פולו סטייל** - 116,000 שקלים (95 כ\"ס)\n\n**טויוטה יאריס סטייל** - 142,000 שקלים\n\nאיזו מכונית התכוונת?",
+          "checks": {
+            "trajectory": {
+              "pass": false,
+              "problems": [
+                "called compare"
+              ]
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant acknowledged that \"סטייל\" exists in both the Polo and the Yaris, asked which car the user meant, and did not pick one or search."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "explorer",
+      "category": "mention",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-explorer-r1-397c84fc",
+          "latency_s": 9.49,
+          "tokens": {
+            "input": 10222,
+            "output": 325
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יונדאיפאליסייד"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "car": "יונדאיפאליסייד",
+                "query": "מחיר פורד אקספלורר",
+                "files": [
+                  "palisade.md"
+                ]
+              }
+            }
+          ],
+          "answer": "במבחן של יונדאי פאליסייד רשום שפורד אקספלורר עולה 365,000 שקלים ל-6 נוסעים בהנעה קדמית, ו-390,000 שקלים ל-7 נוסעים בהנעה כפולה.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly stated both prices listed for the Ford Explorer in the Palisade review: 365,000 NIS for 6 seats with 2x4, and 390,000 NIS for 7 seats with 4x4."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "traverse",
+      "category": "mention",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-traverse-r1-8fbcf092",
+          "latency_s": 9.47,
+          "tokens": {
+            "input": 10200,
+            "output": 299
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יונדאיפאליסייד"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "car": "יונדאיפאליסייד",
+                "query": "שברולט טראוורס מחיר Chevrolet Traverse price"
+              }
+            }
+          ],
+          "answer": "במבחן של יונדאי פאליסייד רשום ששברולט טראוורס (Traverse) עולה 340,000 שקלים בהנעה קדמית (2x4) ו-380,000 שקלים בהנעה כפולה (4x4).",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant presented the prices as being from the Palisade review correctly, but failed to note that these are not from a tested Traverse review."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "model-y",
+      "category": "mention",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-model-y-r1-be43c43b",
+          "latency_s": 8.21,
+          "tokens": {
+            "input": 9569,
+            "output": 260
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "טסלה",
+                "model": "מודל Y"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "טסלה מודל Y מחיר",
+                "car": "xpeng-g6"
+              }
+            }
+          ],
+          "answer": "לא מצאתי ביקורת על טסלה מודל Y במאגר. הרכב מוזכר בביקורת על אקספנג G6 כמתחרה, אבל אין לי מידע על המחיר שלו.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly stated that Model Y was not reviewed and is only mentioned in the Xpeng G6 review, and did not provide or invent a price for the Model Y."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "cx-5",
+      "category": "unknown",
+      "pass_rate": {
+        "trajectory": "0/1",
+        "tool_args": "0/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-cx-5-r1-94e7be67",
+          "latency_s": 8.5,
+          "tokens": {
+            "input": 9518,
+            "output": 238
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "מאזדה2"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "מאזדה CX-5 מחיר",
+                "car": "מאזדה2"
+              }
+            }
+          ],
+          "answer": "לא מצאתי מידע על מאזדה CX-5 במבחני הדרך שלי. יכול להיות שהדגם הזה לא נבדק, או שהוא מופיע תחת שם אחר.",
+          "checks": {
+            "trajectory": {
+              "pass": false,
+              "problems": [
+                "called search_passages"
+              ]
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "find_cars: 'מאזדה2' is rows"
+              ]
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant said they could not find the Mazda CX-5, did not claim to be sure it is absent, did not perform a search, and did not provide a price."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "camry",
+      "category": "unknown",
+      "pass_rate": {
+        "trajectory": "0/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-camry-r1-7eb28fa6",
+          "latency_s": 7.99,
+          "tokens": {
+            "input": 8526,
+            "output": 237
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "טויוטה",
+                "model": "קאמרי"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "טויוטה קאמרי מחיר"
+              }
+            }
+          ],
+          "answer": "לא מצאתי טויוטה קאמרי במבחני הדרך שיש לי. ייתכן שהמכונית לא נבחנה או שהיא מוכרת בשם אחר בישראל.",
+          "checks": {
+            "trajectory": {
+              "pass": false,
+              "problems": [
+                "called search_passages"
+              ]
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant says they could not find the Toyota Camry by that name without being certain it is absent and does not provide a price."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "suv-under-150",
+      "category": "no-car",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-suv-under-150-r1-e96b2cbd",
+          "latency_s": 21.83,
+          "tokens": {
+            "input": 21418,
+            "output": 672
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "price_max": 150000,
+                "segment": "suv"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "price_max": 150000
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "price_max": 150000,
+                "segment": "large-suv"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "רכב פנאי SUV משפחתי נסיעות שטח"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "segment": "suv"
+              }
+            }
+          ],
+          "answer": "מצטער, אבל במסגרת התקציב של עד 150 אלף שקל אין ברשותי ביקורות על רכבי פנאי (SUV). \n\nהרכבים המבוקרים שמצאתי עד 150,000 ₪ הם רכבי עיר קומפקטיים:\n- פולקסווגן פולו סטייל - 116,000 ₪\n- מאזדה 2 דיינמיק - 126,000 ₪\n- פולקסווגן פולו סטייל פלוס - 129,000 ₪\n- מאזדה 2 פיור בלאק - 135,000 ₪\n- טויוטה יאריס סטייל (היברידי) - 142,000 ₪\n\nרכבי הפנאי המבוקרים שיש לי מתחילים ממחיר של 162,000 ₪ (ג'ילי EX5 חשמלי) ומעלה.\n\nאם אתה יכול להיות גמיש בתקציב, אשמח לספר לך על האופציות הזמינות ברכבי פנאי במחיר מעט גבוה יותר.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly states that no reviewed SUVs fit the budget, mentions the Geely EX5 at 162,000 NIS as the cheapest reviewed SUV, and clarifies that the Polo, Mazda 2, and Yaris are compact city cars, not SUVs."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "biggest-trunk",
+      "category": "no-car",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-biggest-trunk-r1-c19c0376",
+          "latency_s": 15.38,
+          "tokens": {
+            "input": 16700,
+            "output": 671
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {}
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "נפח תא המטען כשכל המושבים בשימוש"
+              }
+            }
+          ],
+          "answer": "מצאתי מספר רכבים עם נתונים על נפח תא המטען כשכל המושבים בשימוש:\n\n**הינדאי פאליסייד** - 300 ליטרים\n\n**מיצובישי אאוטלנדר** - 148 ליטרים בלבד\n\n**שקודה קודיאק** - 289 ליטרים\n\n**פיג'ו 408** - 536 ליטרים\n\nהאם חיפשת רכב ספציפי מתוך אלה?",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant provided trunk volumes for multiple cars when no specific car was requested, did not pass a car argument, and correctly included the Kodiaq (289 liters) and Outlander (148 liters) values."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "tucson-sportage",
+      "category": "compare",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-tucson-sportage-r1-f6b27b98",
+          "latency_s": 16.64,
+          "tokens": {
+            "input": 12155,
+            "output": 813
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "יונדאי",
+                "model": "טוסון"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "קיא",
+                "model": "ספורטאז'"
+              }
+            },
+            {
+              "name": "compare",
+              "args": {
+                "files": [
+                  "tucson-sportage.md"
+                ],
+                "aspect": "מחיר"
+              }
+            }
+          ],
+          "answer": "בהשוואה בין המכוניות שנבחנו:\n\n**יונדאי טוסון Ultimate** - 230,000 ₪\n\n**קיא ספורטאז':**\n- גרסת Premium - 210,000 ₪\n- גרסת Long Urban (גרסת כניסה) - 189,900 ₪ (185,900 ₪ במחיר השקה)\n\nפער המחיר בין הטוסון לבין גרסת הפרמיום של הספורטאז' הוא 20,000 ₪. כאשר משווים לגרסת הכניסה החדשה (Long Urban) של הספורטאז', הפער גדל ועומד על כ-40,000 ₪.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly associates the Sportage Premium with 210,000 NIS and the Tucson Ultimate with 230,000 NIS, keeping each price with the right car."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "trunk-compare",
+      "category": "compare",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-trunk-compare-r1-861989b2",
+          "latency_s": 10.67,
+          "tokens": {
+            "input": 10493,
+            "output": 453
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "skoda",
+                "model": "kodiaq"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "mitsubishi",
+                "model": "outlander"
+              }
+            },
+            {
+              "name": "compare",
+              "args": {
+                "files": [
+                  "kodiaq.md",
+                  "outlander.md"
+                ],
+                "aspect": "נפח תא המטען כשכל המושבים בשימוש"
+              }
+            }
+          ],
+          "answer": "כשכל המושבים בשימוש:\n\n**סקודה קודיאק** - נפח תא המטען הוא 289 ליטרים\n\n**מיצובישי אאוטלנדר** - נפח תא המטען הוא 148 ליטרים בלבד\n\nהקודיאק מציע כמעט פי שניים יותר נפח מטען מהאאוטלנדר כאשר כל שבעת המושבים פתוחים.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant provided the trunk volumes for both the Kodiaq (289 liters) and Outlander (148 liters) with all seats in use, citing both cars as required."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "yaris-mazda",
+      "category": "compare",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-yaris-mazda-r1-f8a60820",
+          "latency_s": 10.5,
+          "tokens": {
+            "input": 8799,
+            "output": 456
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "טויוטה",
+                "model": "יאריס"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "מאזדה",
+                "model": "2"
+              }
+            },
+            {
+              "name": "compare",
+              "args": {
+                "files": [
+                  "yaris-mazda2.md"
+                ],
+                "aspect": "צריכת דלק"
+              }
+            }
+          ],
+          "answer": "במבחן ההשוואתי בין טויוטה יאריס למאזדה 2:\n\n**טויוטה יאריס** (היברידית) - 20.6 ק\"מ לליטר\n\n**מאזדה 2** - 14.5 ק\"מ לליטר\n\nהיאריס ההיברידית מציגה יעילות דלק גבוהה משמעותית בזכות המערכת ההיברידית שלה, בעוד שהמאזדה 2 עם מנוע הבנזין הרגיל השיגה נתון טוב אבל רחוק מזה של היאריס.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly attributed 20.6 km/l to the Yaris hybrid and 14.5 km/l to the Mazda 2."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "polo-then-yaris",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-polo-then-yaris-r1-5ef37f50",
+          "latency_s": 22.07,
+          "tokens": {
+            "input": 22411,
+            "output": 1198
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יאריס"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יאריס"
+              }
+            }
+          ],
+          "answer": "כן, הפולו זול יותר מהיאריס:\n- **פולקסווגן פולו Style** - 116,000 ₪\n- **פולקסווגן פולו Style Plus** - 129,000 ₪\n- **טויוטה יאריס Style** - 142,000 ₪\n\nהפולו בגרסת ה-Style זול ב-26,000 ₪ מהיאריס, וגם בגרסת ה-Style Plus הוא זול ב-13,000 ₪.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant compared both Polo versions instead of comparing only the tested Polo (Style Plus at 129,000 NIS) to the Yaris."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "palisade-then-trim",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "0/1",
+        "tool_args": "0/1",
+        "cars": "0/1",
+        "facts": "0/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-palisade-then-trim-r1-4e97ccc6",
+          "latency_s": 119.47,
+          "tokens": {
+            "input": 55419,
+            "output": 7035
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יונדאיפאליסייד"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "car": "יונדאיפאליסייד",
+                "query": "סקירה כללית מאפיינים עיקריים יתרונות חסרונות"
+              }
+            }
+          ],
+          "answer": "",
+          "checks": {
+            "trajectory": {
+              "pass": false,
+              "problems": [
+                "GraphRecursionError: Recursion limit of 16 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+              ]
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "GraphRecursionError: Recursion limit of 16 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+              ]
+            },
+            "cars": {
+              "pass": false,
+              "problems": [
+                "answer does not mention קליגרפי",
+                "GraphRecursionError: Recursion limit of 16 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+              ]
+            },
+            "facts": {
+              "pass": false,
+              "problems": [
+                "answer missing 390000",
+                "answer missing 411000",
+                "390000 missing",
+                "GraphRecursionError: Recursion limit of 16 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+              ]
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "GraphRecursionError: Recursion limit of 16 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT"
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "palisade-then-explorer",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-palisade-then-explorer-r1-5c02ac9c",
+          "latency_s": 18.08,
+          "tokens": {
+            "input": 18767,
+            "output": 718
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "אקספלורר"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "car": "palisade",
+                "query": "אקספלורר Explorer"
+              }
+            }
+          ],
+          "answer": "במבחן הפאליסייד מוזכר שפורד אקספלורר עולה:\n- 365,000 ₪ ל-6 נוסעים עם הנעה 2x4\n- 390,000 ₪ ל-7 נוסעים עם הנעה 4x4",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly identified 365,000 NIS as the 6-seat Explorer price and 390,000 NIS as the 7-seat Explorer price from the Palisade review."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "suv-list-with-prices",
+      "category": "no-car",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-suv-list-with-prices-r1-ef37c833",
+          "latency_s": 9.69,
+          "tokens": {
+            "input": 4628,
+            "output": 400
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "segment": "suv"
+              }
+            }
+          ],
+          "answer": "הנה רכבי פנאי (SUV) שנבדקו:\n\n1. **Geely EX5 Pro** - 162,000 ₪ (חשמלי)\n2. **Geely EX5 Tech** - 168,000 ₪ (חשמלי)\n3. **Kia Sportage Long Urban** - 189,900 ₪ (היברידי)\n4. **Mitsubishi Outlander** - 190,000 ₪ (בנזין, 7 מושבים)\n5. **Kia Sportage Premium** - 210,000 ₪ (היברידי)\n6. **Skoda Kodiaq Advance** - 215,000 ₪ (בנזין, 7 מושבים)\n7. **Hyundai Tucson Ultimate** - 230,000 ₪ (היברידי)\n8. **Mitsubishi Outlander Luxury** - 240,000 ₪ (בנזין, 7 מושבים)\n\nהאם תרצה לשמוע פרטים נוספים על מי מהם?",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant listed reviewed SUVs with their prices from find_cars, including the Geely EX5 at 162,000 NIS as required."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "no-repeated-preference-reminder",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-no-repeated-preference-reminder-r1-9f979e2b",
+          "latency_s": 24.04,
+          "tokens": {
+            "input": 16725,
+            "output": 877
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "מאזדה2"
+              }
+            }
+          ],
+          "answer": "מאזדה 2 נבחנה בשתי גרסאות:\n\n- **Mazda 2 Dynamic** - 126,000 ₪\n- **Mazda 2 Pure Black** - 135,000 ₪",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant answered the Mazda 2 price question without mentioning it is not an SUV, without mentioning רכב פנאי, and without asking the user to return to SUVs."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "trim-of-another-car-in-follow-up",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-trim-of-another-car-in-follow-up-r1-58d21ced",
+          "latency_s": 11.69,
+          "tokens": {
+            "input": 9356,
+            "output": 357
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "אקסלנס"
+              }
+            }
+          ],
+          "answer": "היונדאי פאליסייד אקסלנס נבחנה בשתי תצורות:\n\n• **8 מושבים** - 350,000 ₪\n• **7 מושבים** - 358,000 ₪",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant correctly stated that Excellence is a Hyundai Palisade trim with the correct prices and configurations, and did not search for it in the Polo review or claim the Polo has no Excellence trim."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "preference-one-reminder",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-preference-one-reminder-r1-f19d8f78",
+          "latency_s": 26.33,
+          "tokens": {
+            "input": 22956,
+            "output": 862
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יאריס"
+              }
+            }
+          ],
+          "answer": "טויוטה יאריס שנבחנה עולה 142,000 ₪ (גרסת Style).",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The last reply answers the Yaris price (142,000 ₪), an SUV mismatch was mentioned in zero assistant replies (which is at most one), and the last reply does not say the Yaris is not an SUV nor ask the user to go back."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "preference-broadens",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-preference-broadens-r1-9e3f5907",
+          "latency_s": 81.21,
+          "tokens": {
+            "input": 59179,
+            "output": 3023
+          },
+          "tools": [
+            {
+              "name": "compare",
+              "args": {
+                "files": [
+                  "geely-ex5.md",
+                  "kia-sportage.md",
+                  "hyundai-tucson.md",
+                  "mitsubishi-outlander.md",
+                  "skoda-kodiaq.md"
+                ],
+                "aspect": "overall recommendation and suitability"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "המלצה סיכום יתרונות חסרונות מתאים למי",
+                "car": "Kia Sportage"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "המלצה סיכום יתרונות חסרונות מתאים למי",
+                "car": "Hyundai Tucson"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "המלצה סיכום יתרונות חסרונות מתאים למי",
+                "car": "Mitsubishi Outlander"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "המלצה סיכום יתרונות חסרונות מתאים למי",
+                "car": "Skoda Kodiaq"
+              }
+            }
+          ],
+          "answer": "בהתבסס על כך שאתה מחפש רכב פנאי, הנה ההמלצות שלי:\n\n**אם אתה מחפש תמורה מעולה:**\n**Kia Sportage Premium** (189,900 ₪) - הספורטאז' מציע איזון מצוין. הוא מרווח, מאובזר בעשרה, נוח מאוד, חזק (230 כ\"ס היברידי) וחסכוני בדלק (כ-14 ק\"מ לליטר). למעשה, הוא נבחר כבעל תמורה עדיפה על פני הטוסון היקר ממנו.\n\n**אם אתה צריך 7 מושבים:**\n**Mitsubishi Outlander** (החל מ-190,000 ₪) - האאוטלנדר הוא מה שנקרא \"פשוט עובד\". הוא קל מאוד לתפעול, נוח, שקט, עשוי היטב ומציע שימושיות משפחתית טובה. המוניטין היפני והאמינות הם יתרון נוסף. השורה השלישית מתאימה בעיקר לילדים, לא למבוגרים בנסיעות ארוכות.\n\n**Skoda Kodiaq Advance** (215,000 ₪) - גם הוא עם 7 מושבים, מרווח מאוד ושימושי ברמה גבוהה. מציע איכות בנייה גרמנית ויכולת כוללת טובה.\n\n**אם אתה מעדיף חשמלי:**\n**Geely EX5 Pro** (162,000 ₪) - המחיר הנמוך ביותר ברשימה, עם ממדים נאים, מרחב משובח, אבזור עשיר, ביצועים טובים ונוחות נסיעה טובה. קיבל 5 כוכבים במבחני הבטיחות של יורו NCAP.\n\n**המלצתי האישית:** הספורטאז' מציע את האיזון הטוב ביותר בין מחיר, נוחות, חיסכון בדלק ואבזור. אם אתה לא צריך 7 מושבים - זו הבחירה החכמה ביותר.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant recommended only SUVs despite the user asking about city cars (Polo, Mazda 2, Yaris) and did not include those city cars in the recommendation or ask if the user is open to other body types."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "make-peugeot-he",
+      "category": "make",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "0/1",
+        "cars": "1/1",
+        "facts": "0/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-make-peugeot-he-r1-1a287fda",
+          "latency_s": 6.73,
+          "tokens": {
+            "input": 4280,
+            "output": 163
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "פיג'ו"
+              }
+            }
+          ],
+          "answer": "לא מצאתי רכב מבית פיג'ו במאגר הביקורות שלי. ייתכן שהשם נכתב אחרת או שאין לי ביקורת על דגם זה.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "find_cars: \"פיג'ו\" resolved to none"
+              ]
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": false,
+              "problems": [
+                "none of the fact groups matched"
+              ]
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant said they do not have a Peugeot review, but the behavior explicitly states they should say they have the Peugeot 408 review and answer about that car with a price."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "make-peugeot-en",
+      "category": "make",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "0/1",
+        "cars": "1/1",
+        "facts": "0/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-make-peugeot-en-r1-755c51ee",
+          "latency_s": 4.26,
+          "tokens": {
+            "input": 4259,
+            "output": 118
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "Peugeot"
+              }
+            }
+          ],
+          "answer": "I couldn't find a Peugeot review by that name in the road tests I have access to.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "find_cars: 'Peugeot' resolved to none"
+              ]
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": false,
+              "problems": [
+                "none of the fact groups matched"
+              ]
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant said they couldn't find a Peugeot review, but the behavior requires saying they have the Peugeot 408 review and providing a price from it."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "make-peugeot-variant",
+      "category": "make",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "0/1",
+        "cars": "1/1",
+        "facts": "0/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-make-peugeot-variant-r1-95f1ff75",
+          "latency_s": 7.83,
+          "tokens": {
+            "input": 6520,
+            "output": 211
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "פג'ו"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "peugeot"
+              }
+            }
+          ],
+          "answer": "לא מצאתי פג'ו בשם הזה במאגר הביקורות שלי. ייתכן שאין לי ביקורת על רכבי פג'ו, או שהשם נרשם אחרת במערכת.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "find_cars: \"פג'ו\" resolved to none"
+              ]
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": false,
+              "problems": [
+                "none of the fact groups matched"
+              ]
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant said it didn't find Peugeot in the reviews database instead of answering about the Peugeot 408 and providing a price from that review."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "make-hyundai-he",
+      "category": "make",
+      "pass_rate": {
+        "trajectory": "0/1",
+        "tool_args": "0/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-make-hyundai-he-r1-a296643d",
+          "latency_s": 18.37,
+          "tokens": {
+            "input": 9608,
+            "output": 506
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "Hyundai"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "Hyundai מיונדאי"
+              }
+            }
+          ],
+          "answer": "יש לי שני דגמים של יונדאי שנבדקו:\n\n1. **יונדאי טוסון** - רכב פנאי קומפקטי (C-SUV) המוצע בגרסאות היברידיות, כולל גרסה אמריקאית שהגיעה לאחרונה לישראל. זהו אחד הדגמים האהובים על הלקוח הישראלי והיה ממובילי הקטגוריה.\n\n2. **יונדאי פאליסייד** - רכב פנאי גדול (E-SUV) לשבעה או שמונה נוסעים בהנעה היברידית. הדור השני הגיע לישראל השנה (2025), לאחר שעבר שינויים נרחבים ברצפה, בעיצוב, בממדים וביחידות ההנעה.\n\nעל איזה דגם תרצה לשמוע יותר? או שאולי יש לך צרכים ספציפיים שיעזרו לי להמליץ לך?",
+          "checks": {
+            "trajectory": {
+              "pass": false,
+              "problems": [
+                "called search_passages"
+              ]
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "find_cars: 'Hyundai' is not ambiguous across both cars"
+              ]
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant listed both the Palisade and Tucson, asked which one the user wants, did not pick one, and did not search."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "make-hyundai-en",
+      "category": "make",
+      "pass_rate": {
+        "trajectory": "0/1",
+        "tool_args": "0/1",
+        "cars": "0/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-make-hyundai-en-r1-b978a0b2",
+          "latency_s": 15.31,
+          "tokens": {
+            "input": 9528,
+            "output": 421
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "Hyundai"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "Hyundai"
+              }
+            }
+          ],
+          "answer": "יש לי ביקורות על שני דגמים של יונדאי:\n\n1. **יונדאי פאליסייד** - רכב פנאי גדול (E-SUV) לשבעה או שמונה נוסעים בהנעה היברידית, דור שני. זהו דגם גדול שמיועד בעיקר למשפחות.\n\n2. **יונדאי טוסון** - רכב פנאי קומפקטי (C-SUV) בגרסה אמריקאית עם מנוע היברידי. נבדק במבחן השוואתי מול קיה ספורטאז'.\n\nהאם תרצה לשמוע עוד על אחד מהדגמים האלה?",
+          "checks": {
+            "trajectory": {
+              "pass": false,
+              "problems": [
+                "called search_passages"
+              ]
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "find_cars: 'Hyundai' is not ambiguous across both cars"
+              ]
+            },
+            "cars": {
+              "pass": false,
+              "problems": [
+                "answer does not mention Palisade"
+              ]
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant listed both Hyundai models (Palisade and Tucson), asked which one the user would like to hear about, did not pick one, and did not perform a search."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "insist-after-miss",
+      "category": "unknown",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-insist-after-miss-r1-2f6a4754",
+          "latency_s": 14.68,
+          "tokens": {
+            "input": 17464,
+            "output": 388
+          },
+          "tools": [
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "CX-5 מחיר"
+              }
+            }
+          ],
+          "answer": "אני מצטער, גם אחרי בדיקה נוספת לא מצאתי ביקורת על מאזדה CX-5 במאגר הביקורות הזמין לי.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The last reply does not say it could not find the Mazda CX-5 by that name, but rather says it couldn't find a \"review\" (ביקורת) of it, which changes the meaning and context."
+            }
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "id": "make-after-add",
+      "category": "make",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "0/1",
+        "cars": "1/1",
+        "facts": "0/1",
+        "behavior": "1/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-make-after-add-r1-1e3ca427",
+          "latency_s": 18.04,
+          "tokens": {
+            "input": 9692,
+            "output": 459
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": "פיג'ו"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "פיג'ו Peugeot"
+              }
+            }
+          ],
+          "answer": "יש לי ביקורת על **פיג'ו 408 המחודשת**. \n\nהמכונית מתאפיינת במיצוב שחומק מהקטגוריות המקובלות, עיצוב מרהיב, תא נוסעים עשיר, נוחות והתנהגות מצוינות ומחיר מפתה.\n\nבביקורת מודגשת במיוחד ההתנהגות המצוינת של המכונית - היא הפגינה ביצוע יוצא מן הכלל בפניות מאתגרות, עם שלדה, מתלים והגה עשויים היטב. סדרת 400 של פיג'ו כוללת כמה מיהלומי הכתר של היצרנית לאורך ההיסטוריה, כמו 402, 404, 405 ו-406 המפורסמת במתלים ובהגה המופלאים שלה.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": false,
+              "problems": [
+                "find_cars: \"פיג'ו\" resolved to none",
+                "search_passages: '' resolved to empty"
+              ]
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": false,
+              "problems": [
+                "none of the fact groups matched"
+              ]
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant answered about the Peugeot 408 from the review and provided a price (\"מחיר מפתה\" - tempting/attractive price) without saying Peugeot is missing."
+            }
+          },
+          "pass": false
+        }
+      ]
+    }
+  ]
+}

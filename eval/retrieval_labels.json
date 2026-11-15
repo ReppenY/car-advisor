@@ -1,0 +1,716 @@
+{
+  "k": 4,
+  "note": "A passage is relevant only when it states the fact the query asks for. A short model-name query is relevant when the passage is from that car's review. Hand-labeled from the passages each method returned.",
+  "cases": [
+    {
+      "id": "polo-price",
+      "category": "price",
+      "query": "מחיר פולקסווגן פולו 110 כ\"ס",
+      "passages": {
+        "polo.md:21-33": {
+          "relevant": true,
+          "why": "states 110 hp at 129,000 and 95 hp at 116,000"
+        },
+        "polo.md:1-15": {
+          "relevant": false,
+          "why": "intro names the 110 hp Polo and does not give the price"
+        },
+        "polo.md:64-68": {
+          "relevant": false,
+          "why": "110 hp performance, no price"
+        },
+        "kodiaq.md:33-47": {
+          "relevant": false,
+          "why": "Kodiaq platform history, not the Polo price"
+        },
+        "tucson-sportage.md:20-26": {
+          "relevant": false,
+          "why": "Tucson and Sportage prices"
+        },
+        "tucson-sportage.md:134-142": {
+          "relevant": false,
+          "why": "which car is better off road"
+        },
+        "xpeng-g6.md:28-42": {
+          "relevant": false,
+          "why": "G6 Performance price"
+        },
+        "palisade.md:84-94": {
+          "relevant": false,
+          "why": "Palisade driving and 350,000"
+        },
+        "palisade.md:96-129": {
+          "relevant": false,
+          "why": "Explorer and Palisade prices, not the Polo"
+        }
+      }
+    },
+    {
+      "id": "g6-price",
+      "category": "price",
+      "query": "Xpeng G6 Performance price",
+      "passages": {
+        "xpeng-g6.md:109-113": {
+          "relevant": true,
+          "why": "Performance costs 255,000"
+        },
+        "xpeng-g6.md:28-42": {
+          "relevant": true,
+          "why": "line 34 states the Performance price, 255,000"
+        },
+        "xpeng-g6.md:1-9": {
+          "relevant": false,
+          "why": "title only, no price figure"
+        },
+        "xpeng-g6.md:13-22": {
+          "relevant": false,
+          "why": "intro and Model Y mention, no price"
+        },
+        "xpeng-g6.md:78-85": {
+          "relevant": false,
+          "why": "power delivery, no price"
+        },
+        "geely-ex5.md:23-37": {
+          "relevant": false,
+          "why": "EX5 background"
+        },
+        "palisade.md:36-46": {
+          "relevant": false,
+          "why": "Palisade trim prices"
+        },
+        "outlander.md:16-24": {
+          "relevant": false,
+          "why": "Outlander size and price"
+        }
+      }
+    },
+    {
+      "id": "calligraphy-price",
+      "category": "trim",
+      "query": "פאליסייד קליגרפי מחיר",
+      "passages": {
+        "palisade.md:96-129": {
+          "relevant": true,
+          "why": "line 123 states Calligraphy at 390,000 and 411,000"
+        },
+        "palisade.md:84-94": {
+          "relevant": false,
+          "why": "350,000 and 358,000 are Excellence"
+        },
+        "tucson-sportage.md:134-142": {
+          "relevant": false,
+          "why": "off-road comparison"
+        },
+        "tucson-sportage.md:28-36": {
+          "relevant": false,
+          "why": "Tucson and Sportage equipment"
+        },
+        "yaris-mazda2.md:146-148": {
+          "relevant": false,
+          "why": "Yaris summary"
+        },
+        "xpeng-g6.md:28-42": {
+          "relevant": false,
+          "why": "G6 price"
+        },
+        "geely-ex5.md:111-115": {
+          "relevant": false,
+          "why": "EX5 price"
+        },
+        "polo.md:21-33": {
+          "relevant": false,
+          "why": "Polo price"
+        }
+      }
+    },
+    {
+      "id": "yaris-consumption",
+      "category": "consumption",
+      "query": "צריכת דלק יאריס ומאזדה 2",
+      "passages": {
+        "yaris-mazda2.md:131-143": {
+          "relevant": true,
+          "why": "Yaris 20.6 km/l and Mazda 2 14.5 km/l"
+        },
+        "yaris-mazda2.md:1-15": {
+          "relevant": false,
+          "why": "comparison title, no consumption figures"
+        },
+        "yaris-mazda2.md:17-29": {
+          "relevant": false,
+          "why": "prices, not consumption"
+        },
+        "yaris-mazda2.md:120-128": {
+          "relevant": false,
+          "why": "trunk liters and the engine, consumption is in the next passage"
+        },
+        "palisade.md:131-153": {
+          "relevant": false,
+          "why": "Palisade hybrid output"
+        },
+        "palisade.md:22-28": {
+          "relevant": false,
+          "why": "Palisade engines"
+        },
+        "tucson-sportage.md:134-142": {
+          "relevant": false,
+          "why": "off-road comparison"
+        },
+        "tucson-sportage.md:60-66": {
+          "relevant": false,
+          "why": "acceleration figures"
+        },
+        "polo.md:64-68": {
+          "relevant": false,
+          "why": "Polo power, not this comparison"
+        },
+        "kodiaq.md:33-47": {
+          "relevant": false,
+          "why": "Kodiaq history"
+        }
+      }
+    },
+    {
+      "id": "kodiaq-trunk",
+      "category": "trunk",
+      "query": "נפח תא מטען קודיאק כל המושבים",
+      "passages": {
+        "kodiaq.md:90-100": {
+          "relevant": true,
+          "why": "289 liters with all seats in use"
+        },
+        "palisade.md:58-72": {
+          "relevant": false,
+          "why": "Palisade passenger space"
+        },
+        "outlander.md:40-54": {
+          "relevant": false,
+          "why": "Outlander trunk is 148 liters"
+        },
+        "tucson-sportage.md:28-36": {
+          "relevant": false,
+          "why": "equipment list"
+        },
+        "tucson-sportage.md:50-58": {
+          "relevant": false,
+          "why": "driving position"
+        },
+        "yaris-mazda2.md:43-57": {
+          "relevant": false,
+          "why": "seat comfort"
+        },
+        "yaris-mazda2.md:120-128": {
+          "relevant": false,
+          "why": "Yaris 286 liters and Mazda 2 280 liters"
+        },
+        "tucson-sportage.md:98-132": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "outlander-trunk",
+      "category": "trunk",
+      "query": "Outlander trunk all seats",
+      "passages": {
+        "outlander.md:40-54": {
+          "relevant": true,
+          "why": "148 liters with all seven seats"
+        },
+        "outlander.md:1-13": {
+          "relevant": false,
+          "why": "intro, no trunk figure"
+        },
+        "kodiaq.md:90-100": {
+          "relevant": false,
+          "why": "Kodiaq trunk, not the Outlander"
+        },
+        "palisade.md:96-129": {
+          "relevant": false,
+          "why": "prices, not the Outlander trunk"
+        },
+        "geely-ex5.md:55-65": {
+          "relevant": false,
+          "why": "driver aids"
+        }
+      }
+    },
+    {
+      "id": "explorer-price",
+      "category": "rival",
+      "query": "פורד אקספלורר מחיר פאליסייד",
+      "passages": {
+        "palisade.md:96-129": {
+          "relevant": true,
+          "why": "lists Explorer at 365,000 and 390,000"
+        },
+        "tucson-sportage.md:134-142": {
+          "relevant": false,
+          "why": "off-road comparison"
+        },
+        "tucson-sportage.md:28-36": {
+          "relevant": false,
+          "why": "equipment"
+        },
+        "yaris-mazda2.md:146-148": {
+          "relevant": false,
+          "why": "Yaris summary"
+        },
+        "xpeng-g6.md:28-42": {
+          "relevant": false,
+          "why": "G6 price"
+        },
+        "xpeng-g6.md:109-113": {
+          "relevant": false,
+          "why": "G6 price"
+        },
+        "geely-ex5.md:111-115": {
+          "relevant": false,
+          "why": "EX5 price"
+        }
+      }
+    },
+    {
+      "id": "tucson-price",
+      "category": "compare",
+      "query": "טוסון ספורטאז' מחיר",
+      "passages": {
+        "tucson-sportage.md:98-132": {
+          "relevant": true,
+          "why": "Sportage 210,000 and Tucson 230,000"
+        },
+        "tucson-sportage.md:20-26": {
+          "relevant": true,
+          "why": "line 26 states Ultimate 230,000 and Premium 210,000"
+        },
+        "tucson-sportage.md:134-142": {
+          "relevant": false,
+          "why": "off-road verdict, no prices"
+        },
+        "yaris-mazda2.md:146-148": {
+          "relevant": false,
+          "why": "Yaris summary"
+        },
+        "yaris-mazda2.md:94-108": {
+          "relevant": false,
+          "why": "Yaris and Mazda 2 prices"
+        },
+        "palisade.md:96-129": {
+          "relevant": false,
+          "why": "Explorer and Palisade prices"
+        },
+        "xpeng-g6.md:28-42": {
+          "relevant": false,
+          "why": "G6 price"
+        },
+        "kodiaq.md:33-47": {
+          "relevant": false,
+          "why": "Kodiaq history"
+        }
+      }
+    },
+    {
+      "id": "number-255000",
+      "category": "number",
+      "query": "255,000",
+      "passages": {
+        "xpeng-g6.md:28-42": {
+          "relevant": true,
+          "why": "states the G6 Performance price, 255,000"
+        },
+        "xpeng-g6.md:109-113": {
+          "relevant": true,
+          "why": "states the G6 Performance price, 255,000"
+        },
+        "outlander.md:16-24": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:74-82": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:20-26": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "geely-ex5.md:23-37": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:84-94": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:1-9": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "geely-ex5.md:111-115": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "number-162000",
+      "category": "number",
+      "query": "162,000",
+      "passages": {
+        "geely-ex5.md:111-115": {
+          "relevant": true,
+          "why": "states the EX5 Pro price, 162,000"
+        },
+        "palisade.md:36-46": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "xpeng-g6.md:109-113": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:20-26": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:28-36": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:84-94": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "kodiaq.md:17-31": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "number-20-6",
+      "category": "number",
+      "query": "20.6",
+      "passages": {
+        "yaris-mazda2.md:59-71": {
+          "relevant": true,
+          "why": "states Yaris consumption, 20.6 km/l"
+        },
+        "yaris-mazda2.md:131-143": {
+          "relevant": true,
+          "why": "states Yaris consumption, 20.6 km/l"
+        },
+        "outlander.md:16-24": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:76-96": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "geely-ex5.md:23-37": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "xpeng-g6.md:28-42": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:28-36": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:1-19": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "outlander.md:26-38": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:20-26": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "short-g6",
+      "category": "short",
+      "query": "G6",
+      "passages": {
+        "xpeng-g6.md:1-9": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "xpeng-g6.md:13-22": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "xpeng-g6.md:28-42": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "xpeng-g6.md:48-54": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "xpeng-g6.md:60-71": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "xpeng-g6.md:78-85": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "xpeng-g6.md:90-102": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "xpeng-g6.md:109-113": {
+          "relevant": true,
+          "why": "the passage is from the Xpeng G6 review"
+        },
+        "geely-ex5.md:1-19": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:1-19": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:68-74": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "short-ex5",
+      "category": "short",
+      "query": "EX5",
+      "passages": {
+        "geely-ex5.md:1-19": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:23-37": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:39-47": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:49-53": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:55-65": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:67-79": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:81-95": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:97-109": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "geely-ex5.md:111-115": {
+          "relevant": true,
+          "why": "the passage is from the Geely EX5 review"
+        },
+        "xpeng-g6.md:1-9": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "polo.md:1-15": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:36-46": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "short-calligraphy",
+      "category": "short",
+      "query": "קליגרפי",
+      "passages": {
+        "palisade.md:36-46": {
+          "relevant": true,
+          "why": "names the Calligraphy trim and its price"
+        },
+        "palisade.md:96-129": {
+          "relevant": true,
+          "why": "names the Calligraphy trim and its price"
+        },
+        "outlander.md:40-54": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "geely-ex5.md:1-19": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "xpeng-g6.md:1-9": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:1-19": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "paraphrase-yaris",
+      "category": "paraphrase",
+      "query": "כמה קילומטר עוברת היאריס על כל ליטר",
+      "passages": {
+        "yaris-mazda2.md:59-71": {
+          "relevant": true,
+          "why": "states Yaris 20.6 km per liter"
+        },
+        "yaris-mazda2.md:131-143": {
+          "relevant": true,
+          "why": "states Yaris 20.6 km per liter"
+        },
+        "palisade.md:131-153": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "yaris-mazda2.md:120-128": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "kodiaq.md:33-47": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:98-132": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "geely-ex5.md:67-79": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "paraphrase-kodiaq",
+      "category": "paraphrase",
+      "query": "כמה מקום נשאר למזוודות בקודיאק כשכל הנוסעים יושבים",
+      "passages": {
+        "kodiaq.md:90-100": {
+          "relevant": true,
+          "why": "states 289 liters with the seats in use"
+        },
+        "kodiaq.md:33-47": {
+          "relevant": true,
+          "why": "states 289 liters with the seats in use"
+        },
+        "palisade.md:58-72": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:50-58": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "outlander.md:40-54": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:96-129": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "yaris-mazda2.md:112-118": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "hebrew-g6",
+      "category": "hebrew",
+      "query": "כמה עולה אקספנג ג'י 6 פרפורמנס",
+      "passages": {
+        "xpeng-g6.md:28-42": {
+          "relevant": true,
+          "why": "states the G6 Performance price, 255,000"
+        },
+        "xpeng-g6.md:109-113": {
+          "relevant": true,
+          "why": "states the G6 Performance price, 255,000"
+        },
+        "xpeng-g6.md:90-102": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "geely-ex5.md:23-37": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:1-9": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:96-129": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "palisade.md:36-46": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "geely-ex5.md:111-115": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "tucson-sportage.md:20-26": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    },
+    {
+      "id": "hebrew-outlander",
+      "category": "hebrew",
+      "query": "נפח תא המטען של האאוטלנדר עם כל המושבים",
+      "passages": {
+        "outlander.md:40-54": {
+          "relevant": true,
+          "why": "states 148 liters with all seven seats"
+        },
+        "palisade.md:58-72": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "kodiaq.md:90-100": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "polo.md:41-55": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        },
+        "yaris-mazda2.md:43-57": {
+          "relevant": false,
+          "why": "does not state the fact this query asks for"
+        }
+      }
+    }
+  ]
+}

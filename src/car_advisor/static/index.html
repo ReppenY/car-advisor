@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car advisor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1c1915;
+      --muted: #6b645c;
+      --line: #e4ddd4;
+      --paper: #f6f3ee;
+      --card: #fffdf9;
+      --accent: #8a4b2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font: 17px/1.5 "Iowan Old Style", Palatino, Georgia, serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      min-height: 100vh;
+    }
+    main, aside { padding: 28px 28px 20px; }
+    main { display: flex; flex-direction: column; }
+    aside {
+      border-left: 1px solid var(--line);
+      background: var(--card);
+    }
+    h1 { font-size: 22px; font-weight: 600; margin: 0 0 18px; }
+    h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; letter-spacing: 0.01em; }
+    #thread {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      overflow: auto;
+      padding-bottom: 16px;
+    }
+    .bubble {
+      max-width: 42rem;
+      white-space: pre-wrap;
+    }
+    .bubble.you { align-self: flex-end; color: var(--ink); }
+    .bubble.advisor { align-self: flex-start; }
+    .who { display: block; font: 12px/1.2 ui-sans-serif, system-ui, sans-serif; color: var(--muted); margin-bottom: 4px; }
+    form { display: flex; gap: 8px; }
+    textarea, input {
+      font: 16px/1.4 ui-sans-serif, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    textarea { flex: 1; resize: none; min-height: 52px; }
+    button {
+      font: 15px/1 ui-sans-serif, system-ui, sans-serif;
+      background: var(--accent);
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      padding: 0 16px;
+      cursor: pointer;
+    }
+    button:disabled { opacity: 0.5; cursor: default; }
+    button.quiet {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      width: 100%;
+      padding: 8px 10px;
+      text-align: start;
+    }
+    button.quiet.current { border-color: var(--accent); }
+    #new-session { margin-bottom: 10px; }
+    #sessions, #articles { list-style: none; margin: 0 0 22px; padding: 0; }
+    #sessions li { margin: 0 0 6px; }
+    #articles li {
+      font: 14px/1.4 ui-sans-serif, system-ui, sans-serif;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .note { font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; color: var(--muted); min-height: 1.4em; margin-top: 8px; }
+    .sources { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; color: var(--muted); margin-top: 6px; }
+    .aside-form { flex-direction: column; }
+    .aside-form input { width: 100%; }
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { border-left: 0; border-top: 1px solid var(--line); }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <main>
+      <h1>Car advisor</h1>
+      <div id="thread"></div>
+      <form id="chat">
+        <textarea id="message" rows="2" placeholder="Ask about a car" dir="auto"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+    <aside>
+      <h2>Conversations</h2>
+      <button id="new-session" class="quiet" type="button">New conversation</button>
+      <ul id="sessions"></ul>
+      <h2>Reviews</h2>
+      <ul id="articles"></ul>
+      <h2>Add a review</h2>
+      <form id="add" class="aside-form">
+        <input id="url" type="url" placeholder="https://www.auto.co.il/..." required>
+        <button type="submit">Add</button>
+      </form>
+      <p id="add-note" class="note"></p>
+    </aside>
+  </div>
+  <script>
+    const thread = document.querySelector("#thread");
+    const chat = document.querySelector("#chat");
+    const message = document.querySelector("#message");
+    const add = document.querySelector("#add");
+    const url = document.querySelector("#url");
+    const note = document.querySelector("#add-note");
+    const list = document.querySelector("#articles");
+    const sessions = document.querySelector("#sessions");
+    let sessionId = localStorage.getItem("car-advisor-session") || crypto.randomUUID();
+    localStorage.setItem("car-advisor-session", sessionId);
+
+    function bubble(role, text, sources) {
+      const item = document.createElement("div");
+      item.className = "bubble " + role;
+      item.dir = "auto";
+      const who = document.createElement("span");
+      who.className = "who";
+      who.textContent = role === "you" ? "You" : "Advisor";
+      item.append(who, document.createTextNode(text));
+      if (sources) {
+        const line = document.createElement("div");
+        line.className = "sources";
+        line.textContent = sources;
+        item.append(line);
+      }
+      thread.append(item);
+      thread.scrollTop = thread.scrollHeight;
+      return item;
+    }
+
+    async function loadSessions() {
+      const response = await fetch("/api/sessions");
+      const body = await response.json();
+      sessions.replaceChildren();
+      for (const item of body.sessions) {
+        const row = document.createElement("li");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "quiet" + (item.id === sessionId ? " current" : "");
+        button.textContent = item.title;
+        button.addEventListener("click", () => openSession(item.id));
+        row.append(button);
+        sessions.append(row);
+      }
+    }
+
+    async function openSession(id) {
+      sessionId = id;
+      localStorage.setItem("car-advisor-session", id);
+      thread.replaceChildren();
+      const response = await fetch("/api/sessions/" + encodeURIComponent(id));
+      if (response.ok) {
+        const body = await response.json();
+        for (const turn of body.turns) {
+          bubble("you", turn.you);
+          if (turn.answer) bubble("advisor", turn.answer, turn.sources);
+        }
+      }
+      await loadSessions();
+    }
+
+    async function loadArticles() {
+      const response = await fetch("/api/articles");
+      const body = await response.json();
+      list.replaceChildren();
+      for (const title of body.articles) {
+        const item = document.createElement("li");
+        item.textContent = title;
+        list.append(item);
+      }
+    }
+
+    message.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" || event.shiftKey || event.isComposing) return;
+      event.preventDefault();
+      if (chat.querySelector("button").disabled) return;
+      chat.requestSubmit();
+    });
+
+    chat.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const text = message.value.trim();
+      if (!text) return;
+      message.value = "";
+      bubble("you", text);
+      const pending = bubble("advisor", "Thinking...");
+      chat.querySelector("button").disabled = true;
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({session_id: sessionId, message: text}),
+        });
+        const body = await response.json();
+        pending.lastChild.textContent = response.ok ? body.answer : (body.detail || "Something went wrong.");
+        if (response.ok && body.sources) {
+          const sources = document.createElement("div");
+          sources.className = "sources";
+          sources.textContent = body.sources;
+          pending.append(sources);
+        }
+        if (response.ok) await loadSessions();
+      } catch {
+        pending.lastChild.textContent = "The advisor is not reachable.";
+      } finally {
+        chat.querySelector("button").disabled = false;
+        message.focus();
+      }
+    });
+
+    add.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      note.textContent = "Reading that article…";
+      add.querySelector("button").disabled = true;
+      try {
+        const response = await fetch("/api/articles", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({url: url.value.trim()}),
+        });
+        const body = await response.json();
+        if (!response.ok) {
+          note.textContent = body.detail || "Could not add that page.";
+          return;
+        }
+        note.textContent = body.status === "already stored"
+          ? "Already in the reviews."
+          : "Added.";
+        url.value = "";
+        await loadArticles();
+      } catch {
+        note.textContent = "Could not add that page.";
+      } finally {
+        add.querySelector("button").disabled = false;
+      }
+    });
+
+    document.querySelector("#new-session").addEventListener("click", () => {
+      openSession(crypto.randomUUID());
+    });
+
+    loadArticles();
+    openSession(sessionId);
+  </script>
+</body>
+</html>

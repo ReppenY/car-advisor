@@ -1,0 +1,578 @@
+{
+  "k": 4,
+  "rows": [
+    {
+      "case": "polo-price",
+      "category": "price",
+      "method": "bm25",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0,
+      "returned": [
+        "polo.md:1-15",
+        "kodiaq.md:33-47",
+        "tucson-sportage.md:134-142",
+        "xpeng-g6.md:28-42"
+      ]
+    },
+    {
+      "case": "polo-price",
+      "category": "price",
+      "method": "dense",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "polo.md:21-33",
+        "palisade.md:84-94",
+        "kodiaq.md:33-47",
+        "tucson-sportage.md:20-26"
+      ]
+    },
+    {
+      "case": "polo-price",
+      "category": "price",
+      "method": "hybrid",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "polo.md:21-33",
+        "kodiaq.md:33-47",
+        "palisade.md:96-129",
+        "xpeng-g6.md:28-42"
+      ]
+    },
+    {
+      "case": "g6-price",
+      "category": "price",
+      "method": "bm25",
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 0.5,
+      "precision_at_k": 0.25,
+      "returned": [
+        "xpeng-g6.md:1-9",
+        "xpeng-g6.md:109-113",
+        "xpeng-g6.md:13-22",
+        "xpeng-g6.md:78-85"
+      ]
+    },
+    {
+      "case": "g6-price",
+      "category": "price",
+      "method": "dense",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.5,
+      "returned": [
+        "xpeng-g6.md:109-113",
+        "geely-ex5.md:23-37",
+        "palisade.md:36-46",
+        "xpeng-g6.md:28-42"
+      ]
+    },
+    {
+      "case": "g6-price",
+      "category": "price",
+      "method": "hybrid",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "xpeng-g6.md:109-113",
+        "geely-ex5.md:23-37",
+        "palisade.md:36-46",
+        "outlander.md:16-24"
+      ]
+    },
+    {
+      "case": "calligraphy-price",
+      "category": "trim",
+      "method": "bm25",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "palisade.md:96-129",
+        "tucson-sportage.md:134-142",
+        "yaris-mazda2.md:146-148",
+        "xpeng-g6.md:28-42"
+      ]
+    },
+    {
+      "case": "calligraphy-price",
+      "category": "trim",
+      "method": "dense",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0,
+      "returned": [
+        "palisade.md:84-94",
+        "geely-ex5.md:111-115",
+        "tucson-sportage.md:28-36",
+        "polo.md:21-33"
+      ]
+    },
+    {
+      "case": "calligraphy-price",
+      "category": "trim",
+      "method": "hybrid",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "palisade.md:96-129",
+        "polo.md:21-33",
+        "tucson-sportage.md:28-36",
+        "geely-ex5.md:111-115"
+      ]
+    },
+    {
+      "case": "yaris-consumption",
+      "category": "consumption",
+      "method": "bm25",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0,
+      "returned": [
+        "yaris-mazda2.md:1-15",
+        "palisade.md:131-153",
+        "tucson-sportage.md:134-142",
+        "polo.md:64-68"
+      ]
+    },
+    {
+      "case": "yaris-consumption",
+      "category": "consumption",
+      "method": "dense",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "yaris-mazda2.md:131-143",
+        "palisade.md:22-28",
+        "kodiaq.md:33-47",
+        "yaris-mazda2.md:120-128"
+      ]
+    },
+    {
+      "case": "yaris-consumption",
+      "category": "consumption",
+      "method": "hybrid",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0,
+      "returned": [
+        "yaris-mazda2.md:17-29",
+        "palisade.md:131-153",
+        "tucson-sportage.md:134-142",
+        "kodiaq.md:33-47"
+      ]
+    },
+    {
+      "case": "kodiaq-trunk",
+      "category": "trunk",
+      "method": "bm25",
+      "hit_at_1": 0.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 0.5,
+      "precision_at_k": 0.25,
+      "returned": [
+        "palisade.md:58-72",
+        "kodiaq.md:90-100",
+        "outlander.md:40-54",
+        "tucson-sportage.md:28-36"
+      ]
+    },
+    {
+      "case": "kodiaq-trunk",
+      "category": "trunk",
+      "method": "dense",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "kodiaq.md:90-100",
+        "yaris-mazda2.md:43-57",
+        "tucson-sportage.md:50-58",
+        "palisade.md:58-72"
+      ]
+    },
+    {
+      "case": "kodiaq-trunk",
+      "category": "trunk",
+      "method": "hybrid",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "kodiaq.md:90-100",
+        "palisade.md:58-72",
+        "tucson-sportage.md:28-36",
+        "yaris-mazda2.md:120-128"
+      ]
+    },
+    {
+      "case": "outlander-trunk",
+      "category": "trunk",
+      "method": "bm25",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0,
+      "returned": [
+        "outlander.md:1-13"
+      ]
+    },
+    {
+      "case": "outlander-trunk",
+      "category": "trunk",
+      "method": "dense",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "outlander.md:40-54",
+        "kodiaq.md:90-100",
+        "palisade.md:96-129",
+        "geely-ex5.md:55-65"
+      ]
+    },
+    {
+      "case": "outlander-trunk",
+      "category": "trunk",
+      "method": "hybrid",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0,
+      "returned": [
+        "outlander.md:1-13",
+        "kodiaq.md:90-100",
+        "palisade.md:96-129",
+        "geely-ex5.md:55-65"
+      ]
+    },
+    {
+      "case": "explorer-price",
+      "category": "rival",
+      "method": "bm25",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "palisade.md:96-129",
+        "tucson-sportage.md:134-142",
+        "yaris-mazda2.md:146-148",
+        "xpeng-g6.md:28-42"
+      ]
+    },
+    {
+      "case": "explorer-price",
+      "category": "rival",
+      "method": "dense",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "palisade.md:96-129",
+        "geely-ex5.md:111-115",
+        "xpeng-g6.md:109-113",
+        "tucson-sportage.md:28-36"
+      ]
+    },
+    {
+      "case": "explorer-price",
+      "category": "rival",
+      "method": "hybrid",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "palisade.md:96-129",
+        "xpeng-g6.md:28-42",
+        "geely-ex5.md:111-115",
+        "tucson-sportage.md:28-36"
+      ]
+    },
+    {
+      "case": "tucson-price",
+      "category": "compare",
+      "method": "bm25",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0,
+      "returned": [
+        "tucson-sportage.md:134-142",
+        "yaris-mazda2.md:146-148",
+        "palisade.md:96-129",
+        "xpeng-g6.md:28-42"
+      ]
+    },
+    {
+      "case": "tucson-price",
+      "category": "compare",
+      "method": "dense",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.5,
+      "returned": [
+        "tucson-sportage.md:98-132",
+        "palisade.md:96-129",
+        "yaris-mazda2.md:94-108",
+        "tucson-sportage.md:20-26"
+      ]
+    },
+    {
+      "case": "tucson-price",
+      "category": "compare",
+      "method": "hybrid",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25,
+      "returned": [
+        "tucson-sportage.md:98-132",
+        "palisade.md:96-129",
+        "yaris-mazda2.md:146-148",
+        "xpeng-g6.md:28-42"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "method": "bm25",
+      "category": "price",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.5,
+      "hit_at_k": 0.5,
+      "mrr": 0.25,
+      "precision_at_k": 0.125
+    },
+    {
+      "method": "bm25",
+      "category": "all",
+      "hit_at_1": 0.25,
+      "hit_at_3": 0.5,
+      "hit_at_k": 0.5,
+      "mrr": 0.375,
+      "precision_at_k": 0.125
+    },
+    {
+      "method": "dense",
+      "category": "price",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.375
+    },
+    {
+      "method": "dense",
+      "category": "all",
+      "hit_at_1": 0.875,
+      "hit_at_3": 0.875,
+      "hit_at_k": 0.875,
+      "mrr": 0.875,
+      "precision_at_k": 0.2812
+    },
+    {
+      "method": "hybrid",
+      "category": "price",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "hybrid",
+      "category": "all",
+      "hit_at_1": 0.75,
+      "hit_at_3": 0.75,
+      "hit_at_k": 0.75,
+      "mrr": 0.75,
+      "precision_at_k": 0.1875
+    },
+    {
+      "method": "bm25",
+      "category": "trim",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "dense",
+      "category": "trim",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0
+    },
+    {
+      "method": "hybrid",
+      "category": "trim",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "bm25",
+      "category": "consumption",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0
+    },
+    {
+      "method": "dense",
+      "category": "consumption",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "hybrid",
+      "category": "consumption",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0
+    },
+    {
+      "method": "bm25",
+      "category": "trunk",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.5,
+      "hit_at_k": 0.5,
+      "mrr": 0.25,
+      "precision_at_k": 0.125
+    },
+    {
+      "method": "dense",
+      "category": "trunk",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "hybrid",
+      "category": "trunk",
+      "hit_at_1": 0.5,
+      "hit_at_3": 0.5,
+      "hit_at_k": 0.5,
+      "mrr": 0.5,
+      "precision_at_k": 0.125
+    },
+    {
+      "method": "bm25",
+      "category": "rival",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "dense",
+      "category": "rival",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "hybrid",
+      "category": "rival",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    },
+    {
+      "method": "bm25",
+      "category": "compare",
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "precision_at_k": 0.0
+    },
+    {
+      "method": "dense",
+      "category": "compare",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.5
+    },
+    {
+      "method": "hybrid",
+      "category": "compare",
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "precision_at_k": 0.25
+    }
+  ],
+  "unlabeled": []
+}

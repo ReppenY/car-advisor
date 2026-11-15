@@ -1,0 +1,37 @@
+{
+  "note": "Labeled from the article titles and price sentences before extraction. Not used to change the resolver, extractor, or retrieval.",
+  "articles": [
+    {
+      "slug": "kia-ev5",
+      "url": "https://www.auto.co.il/articles/test-drives/road-tests/kia-ev5/",
+      "subject": "kiaev5",
+      "subject_name": "Kia EV5",
+      "mentioned": ["kiaev6", "kiaev3", "kiaev9", "kiaev4"],
+      "prices": [199000, 220000]
+    },
+    {
+      "slug": "honda-hr-v",
+      "url": "https://www.auto.co.il/articles/test-drives/road-tests/honda-hr-v/",
+      "subject": "hondahrv",
+      "subject_name": "Honda HR-V",
+      "mentioned": ["nissanjuke", "hondajazz", "toyotacorolla"],
+      "prices": [185000, 200000]
+    }
+  ],
+  "names": [
+    {"name": "Kia EV5", "expect": "kiaev5"},
+    {"name": "קיה EV5", "expect": "kiaev5"},
+    {"name": "EV5", "expect": "kiaev5"},
+    {"name": "evv5", "expect": "kiaev5"},
+    {"name": "Honda HR-V", "expect": "hondahrv"},
+    {"name": "הונדה HR-V", "expect": "hondahrv"},
+    {"name": "HR-V", "expect": "hondahrv"},
+    {"name": "hrv", "expect": "hondahrv"},
+    {"name": "Nissan Juke", "expect": "nissanjuke"},
+    {"name": "Honda Jazz", "expect": "hondajazz"}
+  ],
+  "queries": [
+    {"id": "ev5-price", "query": "מחיר קיה EV5", "file": "kia-ev5.md", "need": "199,000 or 220,000"},
+    {"id": "hrv-price", "query": "מחיר הונדה HR-V", "file": "honda-hr-v.md", "need": "185,000 or 200,000"}
+  ]
+}

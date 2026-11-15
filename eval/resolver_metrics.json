@@ -1,0 +1,90 @@
+{
+  "names": 52,
+  "rules": [
+    {
+      "rule": "distance 0",
+      "precision": 1.0,
+      "recall": 0.881,
+      "true_positive": 37,
+      "false_positive": 0,
+      "false_negative": 5,
+      "wrong_confident": [],
+      "other": []
+    },
+    {
+      "rule": "distance 1",
+      "precision": 0.9767,
+      "recall": 1.0,
+      "true_positive": 42,
+      "false_positive": 1,
+      "false_negative": 0,
+      "wrong_confident": [
+        {
+          "name": "CX-5",
+          "expect": "none",
+          "kind": "missing",
+          "predicted": "geelyex5",
+          "why": "confident match for a name that should not resolve",
+          "confident": true
+        }
+      ],
+      "other": [
+        {
+          "name": "g7",
+          "expect": "none",
+          "kind": "short",
+          "predicted": [
+            "xpengg6",
+            "xpengp7",
+            "xpengg9"
+          ],
+          "why": "returned candidates for a name that should not resolve",
+          "confident": false
+        }
+      ]
+    },
+    {
+      "rule": "distance 2",
+      "precision": 0.9767,
+      "recall": 1.0,
+      "true_positive": 42,
+      "false_positive": 1,
+      "false_negative": 0,
+      "wrong_confident": [
+        {
+          "name": "CX-5",
+          "expect": "none",
+          "kind": "missing",
+          "predicted": "geelyex5",
+          "why": "confident match for a name that should not resolve",
+          "confident": true
+        }
+      ],
+      "other": [
+        {
+          "name": "g7",
+          "expect": "none",
+          "kind": "short",
+          "predicted": [
+            "geelyex5",
+            "xpengg6",
+            "xpengp7",
+            "xpengg9"
+          ],
+          "why": "returned candidates for a name that should not resolve",
+          "confident": false
+        }
+      ]
+    },
+    {
+      "rule": "length-scaled",
+      "precision": 1.0,
+      "recall": 1.0,
+      "true_positive": 42,
+      "false_positive": 0,
+      "false_negative": 0,
+      "wrong_confident": [],
+      "other": []
+    }
+  ]
+}

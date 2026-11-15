@@ -1,0 +1,82 @@
+{
+  "roles": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "mismatches": []
+  },
+  "prices": {
+    "recall": 1.0,
+    "missing": []
+  },
+  "resolver": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "wrong": []
+  },
+  "retrieval": [
+    {
+      "id": "ev5-price",
+      "hit_at_1": 1.0,
+      "hit_at_k": 1.0,
+      "precision_at_4": 0.5,
+      "passages": [
+        {
+          "rank": 1,
+          "file": "kia-ev5.md",
+          "lines": "91-123",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "honda-hr-v.md",
+          "lines": "83-115",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "kia-ev5.md",
+          "lines": "125-143",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "file": "honda-hr-v.md",
+          "lines": "24-34",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "hrv-price",
+      "hit_at_1": 1.0,
+      "hit_at_k": 1.0,
+      "precision_at_4": 0.5,
+      "passages": [
+        {
+          "rank": 1,
+          "file": "honda-hr-v.md",
+          "lines": "83-115",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "kia-ev5.md",
+          "lines": "91-123",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "honda-hr-v.md",
+          "lines": "117-125",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "file": "kia-ev5.md",
+          "lines": "18-37",
+          "relevant": false
+        }
+      ]
+    }
+  ]
+}

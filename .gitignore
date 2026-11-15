@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/chroma/
+data/catalog.db
+data/checkpoints.db
+data/checkpoints.db-*
+data/bm25.pkl
+data/trace.jsonl
+data/raw/
+data/holdout/raw/
+data/holdout/chroma/
+data/holdout/catalog.db

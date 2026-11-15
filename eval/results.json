@@ -1,0 +1,184 @@
+{
+  "runs_per_case": 1,
+  "cases": [
+    {
+      "id": "no-repeated-preference-reminder",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-no-repeated-preference-reminder-r1-6b19a0c6",
+          "latency_s": 22.37,
+          "tokens": {
+            "input": 15410,
+            "output": 767
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "מאזדה2"
+              }
+            }
+          ],
+          "answer": "מאזדה 2 שנבחנה מגיעה בשתי גרסאות:\n\n• **Mazda 2 Dynamic** - 126,000 ₪\n• **Mazda 2 Pure Black** - 135,000 ₪",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The assistant answered the Mazda 2 price question, and did not say it's not an SUV, did not mention רכב פנאי, and did not ask the user to go back to SUVs."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "preference-one-reminder",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "1/1",
+        "all": "1/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-preference-one-reminder-r1-83ad7e3b",
+          "latency_s": 28.79,
+          "tokens": {
+            "input": 22595,
+            "output": 1078
+          },
+          "tools": [
+            {
+              "name": "find_cars",
+              "args": {
+                "make": null,
+                "model": "יאריס"
+              }
+            }
+          ],
+          "answer": "טויוטה יאריס נבדקה בגרסה אחת:\n\n- **Toyota Yaris Style** - 142,000 ₪",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": true,
+              "reason": "The last reply answers the Yaris price (142,000 ₪), mentions an SUV mismatch in only one earlier reply (when user asked about Polo, which is not an SUV), and the last reply does not say Yaris is not an SUV nor ask the user to go back."
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "preference-broadens",
+      "category": "follow-up",
+      "pass_rate": {
+        "trajectory": "1/1",
+        "tool_args": "1/1",
+        "cars": "1/1",
+        "facts": "1/1",
+        "behavior": "0/1",
+        "all": "0/1"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "session": "eval-preference-broadens-r1-2846f299",
+          "latency_s": 104.43,
+          "tokens": {
+            "input": 65538,
+            "output": 3265
+          },
+          "tools": [
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "נוחות לטיולים נסיעות ארוכות"
+              }
+            },
+            {
+              "name": "find_cars",
+              "args": {
+                "segment": "suv"
+              }
+            },
+            {
+              "name": "search_passages",
+              "args": {
+                "query": "טיולים פנאי שטח דרכים משובשות"
+              }
+            }
+          ],
+          "answer": "בהתחשב בכך שאתה מחפש רכב פנאי, אני ממליץ לך לחזור לאפשרויות רכבי ה-SUV שהצגתי בהתחלה, ולא על מכוניות עירוניות קטנות כמו הפולו, מאזדה 2 או יאריס.\n\nרכבי השטח מתאימים הרבה יותר לשימוש פנאי מכיוון שהם מציעים:\n- מרווח גבוה מהקרקע לדרכים משובשות\n- נפח תא מטען גדול יותר לציוד\n- תא נוסעים מרווח יותר לנסיעות ארוכות\n- תחושת נהיגה נוחה ובטוחה יותר\n\n**ההמלצות שלי מבין הרכבים שנבדקו:**\n\n**אם התקציב מאפשר** - **Kia Sportage Long Urban** (189,900 ₪) - היברידי חסכוני עם ציוד עשיר. בהשוואה לטוסון, הספורטאז' משתלם יותר בזכות מחיר נמוך וצריכת דלק עדיפה אם אין צורך בהנעה כפולה.\n\n**אם אתה מחפש משהו חסכוני יותר** - **Geely EX5 Pro** (162,000 ₪) - חשמלי עם טווח נסיעה טוב.\n\n**אם אתה צריך 7 מקומות** - **Mitsubishi Outlander** (190,000 ₪) הוא בחירה מצוינת. הוא מציע מושבים קדמיים רחבים ונוחים גם לאחר נסיעות ממושכות, שדה ראייה מצוין, ואיכות חומרים טובה מאוד שנותנת תחושה שהרכב עשוי היטב ומתוכנן לשרוד שנים ארוכות.\n\n**אם צריך 7 מקומות ויכולת שטח** - **Skoda Kodiaq Advance** (215,000 ₪) - 7 מקומות, נולד לטיולים.\n\nהאם יש לך העדפה מבחינת תקציב או סוג הדלק? אשמח לספק פרטים נוספים על הרכבים המתאימים לך.",
+          "checks": {
+            "trajectory": {
+              "pass": true,
+              "problems": []
+            },
+            "tool_args": {
+              "pass": true,
+              "problems": []
+            },
+            "cars": {
+              "pass": true,
+              "problems": []
+            },
+            "facts": {
+              "pass": true,
+              "problems": []
+            },
+            "behavior": {
+              "pass": false,
+              "reason": "The assistant tells the user to go back to SUVs only instead of either including city cars together with SUVs in the recommendation or asking whether the user is open to other body types."
+            }
+          },
+          "pass": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+[
+  {
+    "id": "polo-price",
+    "question": "כמה עולה פולקסווגן פולו בגרסת 110 כ\"ס שנבחנה?",
+    "tools": [
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "volkswagen",
+          "model": "polo"
+        }
+      },
+      {
+        "name": "search_passages",
+        "args": {
+          "query": "110 כ\"ס גרסה מחיר",
+          "files": [
+            "polo.md"
+          ]
+        }
+      }
+    ],
+    "answer": "פולקסווגן פולו בגרסת 110 כ\"ס שנבחנה עולה **129,000 שקלים**.\n\nזוהי גרסת ה\"סטייל פלוס\" עם מנוע טורבו-בנזין 1.0 ליטר 3 צילינדרים. לשם השוואה, קיימת גם גרסה חלשה יותר של 95 כ\"ס בדרגת גימור \"סטייל\" במחיר 116,000 שקלים.",
+    "sources": [
+      {
+        "file": "polo.md",
+        "lines": "21-33"
+      }
+    ],
+    "problems": []
+  },
+  {
+    "id": "yaris-mazda-consumption",
+    "question": "מה צריכת הדלק של טויוטה יאריס ושל מאזדה 2 במבחן ההשוואתי?",
+    "tools": [
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "Toyota",
+          "model": "Yaris"
+        }
+      },
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "Mazda",
+          "model": "2"
+        }
+      },
+      {
+        "name": "compare",
+        "args": {
+          "files": [
+            "yaris-mazda2.md"
+          ],
+          "aspect": "fuel consumption"
+        }
+      }
+    ],
+    "answer": "במבחן ההשוואתי בין טויוטה יאריס למאזדה 2:\n\n**טויוטה יאריס (היברידית)**: 20.6 ק\"מ לליטר - נתון צריכה פנטסטי הודות לסיוע ההיברידי, זאת גם כאשר מסלול המבחן כלל קטעים דינמיים מהירים.\n\n**מאזדה 2 (בנזין)**: 14.5 ק\"מ לליטר - נתון צריכה טוב לאור הקצב, אך רחוק מאוד מזה של יאריס.\n\nהיתרון הברור ביעילות הדלק הוא ליאריס ההיברידית עם פער של כ-42% בצריכה לטובתה.",
+    "sources": [
+      {
+        "file": "yaris-mazda2.md",
+        "lines": "131-143"
+      },
+      {
+        "file": "yaris-mazda2.md",
+        "lines": "59-71"
+      }
+    ],
+    "problems": [
+      "expected search_passages files=['yaris-mazda2.md'], got [('find_cars', {'make': 'Toyota', 'model': 'Yaris'}), ('find_cars', {'make': 'Mazda', 'model': '2'}), ('compare', {'files': ['yaris-mazda2.md'], 'aspect': 'fuel consumption'})]"
+    ]
+  },
+  {
+    "id": "trunk-compare",
+    "question": "תשווה את נפח תא המטען של סקודה קודיאק ושל מיצובישי אאוטלנדר כשכל המושבים בשימוש.",
+    "tools": [
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "סקודה",
+          "model": "קודיאק"
+        }
+      },
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "מיצובישי",
+          "model": "אאוטלנדר"
+        }
+      },
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "mitsubishi",
+          "model": "outlander"
+        }
+      },
+      {
+        "name": "compare",
+        "args": {
+          "files": [
+            "kodiaq.md",
+            "outlander.md"
+          ],
+          "aspect": "נפח תא המטען כשכל המושבים בשימוש"
+        }
+      }
+    ],
+    "answer": "בהשוואת נפח תא המטען כאשר כל המושבים בשימוש:\n\n**סקודה קודיאק**: 289 ליטרים\n**מיצובישי אאוטלנדר**: 148 ליטרים\n\nקודיאק מציעה יתרון משמעותי של כמעט כפול בנפח תא המטען כאשר כל שבעת המושבים פתוחים - 289 ליטרים לעומת 148 ליטרים בלבד באאוטלנדר.\n\nלמעשה, נפח המטען בקודיאק עם כל המושבים כמעט זהה לנפח המטען באאוטלנדר עם השורה השלישית מקופלת (478 ליטרים). \n\nחשוב לציין שקודיאק החדש שיפר את נפח המטען בדור השני - גדל ב-55 ליטרים לעומת הדור הקודם, עלייה של 25% בנפח ההטענה.",
+    "sources": [
+      {
+        "file": "kodiaq.md",
+        "lines": "90-100"
+      },
+      {
+        "file": "kodiaq.md",
+        "lines": "33-47"
+      },
+      {
+        "file": "outlander.md",
+        "lines": "40-54"
+      }
+    ],
+    "problems": []
+  },
+  {
+    "id": "xpeng-price",
+    "question": "כמה עולה אקספנג G6 בגרסת פרפורמנס שנבחנה?",
+    "tools": [
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "אקספנג",
+          "model": "G6"
+        }
+      },
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "Xpeng",
+          "model": "G6"
+        }
+      }
+    ],
+    "answer": "אקספנג G6 בגרסת Performance שנבחנה עולה 255,000 ₪.",
+    "sources": [
+      {
+        "file": "xpeng-g6.md",
+        "lines": "34-34"
+      }
+    ],
+    "problems": [
+      "expected search_passages files=['xpeng-g6.md'], got [('find_cars', {'make': 'אקספנג', 'model': 'G6'}), ('find_cars', {'make': 'Xpeng', 'model': 'G6'})]"
+    ]
+  },
+  {
+    "id": "unknown-car",
+    "question": "מה המחיר של מאזדה CX-5?",
+    "tools": [
+      {
+        "name": "find_cars",
+        "args": {
+          "make": "Mazda",
+          "model": "CX-5"
+        }
+      }
+    ],
+    "answer": "מצטער, מאזדה CX-5 לא נמצאת במאגר מבחני הדרכים שלנו. לכן אין לי מידע על המחיר שלה.\n\nאם תרצה, אוכל לעזור לך למצוא רכבי SUV אחרים שכן נבדקו במאגר שלנו.",
+    "sources": [],
+    "problems": []
+  }
+]

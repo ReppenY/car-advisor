@@ -1,0 +1,652 @@
+[
+  {
+    "id": "polo-en",
+    "category": "reviewed",
+    "question": "How much is the Volkswagen Polo that was tested?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_any": ["search_passages", "find_cars"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "volkswagenpolo"},
+      {"tool": "search_passages", "family": "volkswagenpolo"}
+    ],
+    "expected_cars": {"any_name": ["Polo", "פולו"], "family": "volkswagenpolo"},
+    "must_include": [{"number": "129000", "file": "polo.md"}],
+    "expected_behavior": "The tested Polo is the 110 hp Style Plus at 129,000 NIS (polo.md line 27). 116,000 NIS is the 95 hp Style, not the car that was tested."
+  },
+  {
+    "id": "palisade-he",
+    "category": "reviewed",
+    "question": "כמה עולה יונדאי פאליסייד?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "hyundaipalisade"},
+      {"tool": "search_passages", "family": "hyundaipalisade"}
+    ],
+    "expected_cars": {"any_name": ["פאליסייד", "Palisade"], "family": "hyundaipalisade"},
+    "must_include": [{"number": "350000", "file": "palisade.md"}],
+    "expected_behavior": "Quote a Palisade price from the review. The range starts at 350,000 NIS for Excellence. Other trims may be mentioned. Do not invent a price."
+  },
+  {
+    "id": "g6-he",
+    "category": "reviewed",
+    "question": "כמה עולה אקספנג G6 בגרסת פרפורמנס?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "xpengg6"},
+      {"tool": "search_passages", "family": "xpengg6"}
+    ],
+    "expected_cars": {"any_name": ["G6", "ג'י 6"], "family": "xpengg6"},
+    "must_include": [{"number": "255000", "file": "xpeng-g6.md"}],
+    "expected_behavior": "The tested Performance version costs 255,000 NIS (xpeng-g6.md line 34). Do not present another G6 version's price as the Performance price."
+  },
+  {
+    "id": "polo-110",
+    "category": "trims",
+    "question": "כמה עולה פולקסווגן פולו בגרסת 110 כ\"ס שנבחנה?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "volkswagenpolo"},
+      {"tool": "search_passages", "family": "volkswagenpolo"}
+    ],
+    "expected_cars": {"any_name": ["פולו", "Polo"], "family": "volkswagenpolo"},
+    "must_include": [{"number": "129000", "file": "polo.md"}],
+    "expected_behavior": "The tested car is the 110 hp version at 129,000 NIS. 116,000 NIS is the 95 hp Style, and it was not the tested car. Both prices are on polo.md line 27."
+  },
+  {
+    "id": "calligraphy",
+    "category": "trims",
+    "question": "כמה עולה יונדאי פאליסייד בגרסת קליגרפי?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "hyundaipalisade"},
+      {"tool": "search_passages", "family": "hyundaipalisade"}
+    ],
+    "expected_cars": {"any_name": ["קליגרפי", "Calligraphy", "פאליסייד"], "family": "hyundaipalisade"},
+    "must_include": [
+      {"number": "390000", "file": "palisade.md"},
+      {"number": "411000", "file": "palisade.md"}
+    ],
+    "attribute": [
+      {"number": "390000", "owner": ["קליגרפי", "Calligraphy"], "not_owner": ["אקספלורר", "Explorer"], "required": true},
+      {"number": "411000", "owner": ["קליגרפי", "Calligraphy"], "not_owner": ["אקספלורר", "Explorer"], "required": true}
+    ],
+    "expected_behavior": "Calligraphy is 390,000 NIS front-wheel drive and 411,000 NIS all-wheel drive (palisade.md line 40). 350,000 and 358,000 are Excellence, not Calligraphy."
+  },
+  {
+    "id": "excellence",
+    "category": "trims",
+    "question": "כמה עולה יונדאי פאליסייד בגרסת אקסלנס?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "hyundaipalisade"},
+      {"tool": "search_passages", "family": "hyundaipalisade"}
+    ],
+    "expected_cars": {"any_name": ["אקסלנס", "Excellence", "פאליסייד"], "family": "hyundaipalisade"},
+    "must_include": [
+      {"number": "350000", "file": "palisade.md"},
+      {"number": "358000", "file": "palisade.md"}
+    ],
+    "attribute": [
+      {"number": "350000", "owner": ["אקסלנס", "Excellence"], "not_owner": ["קליגרפי", "Calligraphy"], "required": true},
+      {"number": "358000", "owner": ["אקסלנס", "Excellence"], "not_owner": ["קליגרפי", "Calligraphy"], "required": true}
+    ],
+    "expected_behavior": "Excellence is 350,000 NIS for 8 seats and 358,000 NIS for 7 seats (palisade.md line 36). Those prices are not Calligraphy."
+  },
+  {
+    "id": "mazda2",
+    "category": "spelling",
+    "question": "מה צריכת הדלק של מאזדה2?",
+    "expected_tools_called": ["find_cars"],
+    "expected_any": ["search_passages", "compare"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "mazda2"},
+      {"tool": "search_passages", "family": "mazda2"},
+      {"tool": "compare", "files": ["yaris-mazda2.md"], "omit_car": true}
+    ],
+    "expected_cars": {"any_name": ["מאזדה", "Mazda"], "family": "mazda2"},
+    "must_include": [{"number": "14.5", "file": "yaris-mazda2.md"}],
+    "expected_behavior": "Mazda 2's tested consumption is 14.5 km/l (yaris-mazda2.md line 63). 20.6 is the Yaris, not the Mazda 2."
+  },
+  {
+    "id": "sportige",
+    "category": "spelling",
+    "question": "How much is the sportige that was tested?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "kiasportage"},
+      {"tool": "search_passages", "family": "kiasportage"}
+    ],
+    "expected_cars": {"any_name": ["Sportage", "ספורטאז"], "family": "kiasportage"},
+    "must_include": [{"number": "210000", "file": "tucson-sportage.md"}],
+    "attribute": [
+      {"number": "210000", "owner": ["Sportage", "ספורטאז"], "not_owner": ["Tucson", "טוסון"], "required": true}
+    ],
+    "expected_behavior": "sportige means the Kia Sportage. The tested Premium version is 210,000 NIS (tucson-sportage.md line 26). 230,000 NIS is the Tucson Ultimate, not the Sportage."
+  },
+  {
+    "id": "palisade-typo",
+    "category": "spelling",
+    "question": "כמה עולה פליסייד בקליגרפי?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "hyundaipalisade"},
+      {"tool": "search_passages", "family": "hyundaipalisade"}
+    ],
+    "expected_cars": {"any_name": ["קליגרפי", "פאליסייד", "פליסייד"], "family": "hyundaipalisade"},
+    "must_include": [
+      {"number": "390000", "file": "palisade.md"},
+      {"number": "411000", "file": "palisade.md"}
+    ],
+    "attribute": [
+      {"number": "390000", "owner": ["קליגרפי", "Calligraphy"], "not_owner": ["אקספלורר", "Explorer"], "required": true}
+    ],
+    "expected_behavior": "פליסייד is the Palisade. Calligraphy costs 390,000 and 411,000 NIS, not the Excellence prices."
+  },
+  {
+    "id": "g6",
+    "category": "short",
+    "question": "What does the G6 cost?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "xpengg6"},
+      {"tool": "search_passages", "family": "xpengg6"}
+    ],
+    "expected_cars": {"any_name": ["G6"], "family": "xpengg6"},
+    "must_include": [{"number": "255000", "file": "xpeng-g6.md"}],
+    "expected_behavior": "G6 is the Xpeng G6. Give the tested Performance price, 255,000 NIS. Do not treat G6 as unknown."
+  },
+  {
+    "id": "g7",
+    "category": "short",
+    "question": "What does the G7 cost?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": ["search_passages", "compare"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "status": "none"}
+    ],
+    "expected_cars": {"any_name": ["G7", "G6"]},
+    "no_prices": true,
+    "expected_behavior": "Say you could not find a G7 by that name. Do not give it a price. You may mention the Xpeng G6 only as a suggestion, not as the G7. Do not say you are sure there is no G7."
+  },
+  {
+    "id": "style-en",
+    "category": "ambiguous",
+    "question": "How much is the Style trim?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": ["search_passages", "compare"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "candidates": ["volkswagenpolo", "toyotayaris"]}
+    ],
+    "expected_cars": {"any_name": ["Style", "Polo", "Yaris", "סטייל"]},
+    "expected_behavior": "Style is both the Volkswagen Polo and the Toyota Yaris. Ask which car. Do not pick one and do not search yet."
+  },
+  {
+    "id": "style-he",
+    "category": "ambiguous",
+    "question": "כמה עולה גרסת סטייל?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": ["search_passages", "compare"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "candidates": ["volkswagenpolo", "toyotayaris"]}
+    ],
+    "expected_cars": {"any_name": ["סטייל", "פולו", "יאריס", "Style"]},
+    "expected_behavior": "סטייל is both the Polo and the Yaris. Ask which car. Do not pick one and do not search yet."
+  },
+  {
+    "id": "explorer",
+    "category": "mention",
+    "question": "במבחן של יונדאי פאליסייד, איזה מחיר רשום לפורד אקספלורר?",
+    "expected_tools_called": ["find_cars"],
+    "expected_any": ["search_passages", "compare"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "search_passages", "family": "hyundaipalisade"},
+      {"tool": "compare", "files": ["palisade.md"]}
+    ],
+    "tool_arg_any": [
+      {"tool": "search_passages", "family": "hyundaipalisade"},
+      {"tool": "compare", "files": ["palisade.md"]}
+    ],
+    "expected_cars": {"any_name": ["אקספלורר", "Explorer"]},
+    "must_include": [{"number": "365000", "file": "palisade.md"}],
+    "attribute": [
+      {"number": "365000", "owner": ["אקספלורר", "Explorer", "פורד"], "not_owner": ["קליגרפי", "Calligraphy"], "required": true},
+      {"number": "390000", "owner": ["אקספלורר", "Explorer", "פורד"], "not_owner": ["קליגרפי", "Calligraphy"], "required": false}
+    ],
+    "expected_behavior": "Explorer was not tested. 365,000 NIS (6 seats, 2x4) and, if mentioned, 390,000 NIS (7 seats, 4x4) are prices the Palisade review lists for the Explorer on palisade.md line 96. 390,000 is also the tested Calligraphy front-wheel-drive price, so 390,000 must be attributed to the Explorer as listed in that review, not as a tested Palisade or Calligraphy price."
+  },
+  {
+    "id": "traverse",
+    "category": "mention",
+    "question": "במבחן של יונדאי פאליסייד, איזה מחיר רשום לשברולט טראוורס?",
+    "expected_tools_called": ["find_cars"],
+    "expected_any": ["search_passages", "compare"],
+    "expected_tools_not_called": [],
+    "tool_arg_any": [
+      {"tool": "search_passages", "family": "hyundaipalisade"},
+      {"tool": "compare", "files": ["palisade.md"]}
+    ],
+    "expected_cars": {"any_name": ["טראוורס", "טראוורס", "Traverse", "טרוורס"]},
+    "must_include": [{"number": "340000", "file": "palisade.md"}],
+    "attribute": [
+      {"number": "340000", "owner": ["טראוורס", "טרוורס", "Traverse", "שברולט"], "not_owner": ["קליגרפי", "פאליסייד"], "required": true}
+    ],
+    "expected_behavior": "The Traverse was not tested. The Palisade review lists it at 340,000 NIS (2x4) and 380,000 NIS (4x4) on palisade.md line 96. Do not present those as a tested Traverse price from its own review."
+  },
+  {
+    "id": "model-y",
+    "category": "mention",
+    "question": "מה המחיר של טסלה מודל Y?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "teslamodely"},
+      {"tool": "search_passages", "family": "xpengg6"}
+    ],
+    "expected_cars": {"any_name": ["מודל Y", "Model Y", "טסלה"]},
+    "no_prices": true,
+    "expected_behavior": "Model Y is only mentioned in the Xpeng G6 review, which gives it no price. Say it was not reviewed and do not invent a price. Do not answer with the G6's 255,000 NIS as if it were the Model Y."
+  },
+  {
+    "id": "cx-5",
+    "category": "unknown",
+    "question": "מה המחיר של מאזדה CX-5?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": ["search_passages", "compare"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "status": "none"}
+    ],
+    "expected_cars": {"any_name": ["CX-5", "סי-אקס"]},
+    "no_prices": true,
+    "expected_behavior": "Say you could not find the Mazda CX-5 by that name. Do not say you are sure it is absent. Do not search on this first ask, and do not give a price."
+  },
+  {
+    "id": "camry",
+    "category": "unknown",
+    "question": "כמה עולה טויוטה קאמרי?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": ["search_passages", "compare"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "status": "none"}
+    ],
+    "expected_cars": {"any_name": ["קאמרי", "Camry"]},
+    "no_prices": true,
+    "expected_behavior": "Say you could not find the Toyota Camry by that name. Do not say you are sure it is absent. Do not give a price."
+  },
+  {
+    "id": "suv-under-150",
+    "category": "no-car",
+    "question": "איזה רכב פנאי יש עד 150 אלף?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "search_passages", "omit_car": true, "every": true},
+      {"tool": "compare", "omit_car": true, "every": true}
+    ],
+    "expected_cars": {},
+    "expected_behavior": "No reviewed SUV is priced at or under 150,000 NIS. The Polo, Mazda 2, and Yaris are city hatchbacks (catalog segment city), not SUVs, even though they cost less. Say that none of the reviewed SUVs fit. You may mention the Geely EX5 at 162,000 NIS as the cheapest reviewed SUV."
+  },
+  {
+    "id": "biggest-trunk",
+    "category": "no-car",
+    "question": "מה נפח תא המטען הגדול כשכל המושבים בשימוש?",
+    "expected_tools_called": ["find_cars"],
+    "expected_any": ["search_passages", "compare"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "search_passages", "omit_car": true, "every": true},
+      {"tool": "compare", "omit_car": true, "every": true}
+    ],
+    "expected_cars": {},
+    "must_include": [{"number": "289", "file": "kodiaq.md"}],
+    "expected_behavior": "The question names no car. The Kodiaq's trunk with all seats in use is 289 liters (kodiaq.md line 94). The Outlander's is 148 liters (outlander.md line 42). Do not pass a car argument."
+  },
+  {
+    "id": "tucson-sportage",
+    "category": "compare",
+    "question": "תשווה את המחיר של יונדאי טוסון ושל קיה ספורטאז' שנבחנו.",
+    "expected_tools_called": ["find_cars"],
+    "expected_any": ["compare", "search_passages"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "families_all": ["hyundaitucson", "kiasportage"]},
+      {"tool": "compare", "files": ["tucson-sportage.md"], "omit_car": true},
+      {"tool": "search_passages", "family_any": ["hyundaitucson", "kiasportage"]}
+    ],
+    "expected_cars": {"any_name": ["טוסון", "ספורטאז"]},
+    "must_include": [
+      {"number": "210000", "file": "tucson-sportage.md"},
+      {"number": "230000", "file": "tucson-sportage.md"}
+    ],
+    "expected_behavior": "The tested Sportage Premium is 210,000 NIS and the tested Tucson Ultimate is 230,000 NIS (tucson-sportage.md line 26). Keep each price with the right car."
+  },
+  {
+    "id": "trunk-compare",
+    "category": "compare",
+    "question": "תשווה את נפח תא המטען של סקודה קודיאק ושל מיצובישי אאוטלנדר כשכל המושבים בשימוש.",
+    "expected_tools_called": ["find_cars"],
+    "expected_any": ["compare", "search_passages"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "families_all": ["skodakodiaq", "mitsubishioutlander"]},
+      {"tool": "compare", "files": ["kodiaq.md", "outlander.md"], "omit_car": true}
+    ],
+    "tool_arg_any": [
+      {"tool": "compare", "files": ["kodiaq.md", "outlander.md"]},
+      {"tool": "search_passages", "family_any": ["skodakodiaq", "mitsubishioutlander"]}
+    ],
+    "expected_cars": {"any_name": ["קודיאק", "אאוטלנדר"]},
+    "must_include": [
+      {"number": "289", "file": "kodiaq.md"},
+      {"number": "148", "file": "outlander.md"}
+    ],
+    "expected_behavior": "With all seats in use, the Kodiaq trunk is 289 liters and the Outlander trunk is 148 liters. Cite both cars."
+  },
+  {
+    "id": "yaris-mazda",
+    "category": "compare",
+    "question": "מה צריכת הדלק של טויוטה יאריס ושל מאזדה 2 במבחן ההשוואתי?",
+    "expected_tools_called": ["find_cars"],
+    "expected_any": ["compare", "search_passages"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "families_all": ["toyotayaris", "mazda2"]},
+      {"tool": "compare", "files": ["yaris-mazda2.md"], "omit_car": true}
+    ],
+    "expected_cars": {"any_name": ["יאריס", "מאזדה"]},
+    "must_include": [
+      {"number": "20.6", "file": "yaris-mazda2.md"},
+      {"number": "14.5", "file": "yaris-mazda2.md"}
+    ],
+    "expected_behavior": "The Yaris hybrid did 20.6 km/l and the Mazda 2 did 14.5 km/l (yaris-mazda2.md line 63). Keep each figure with the right car."
+  },
+  {
+    "id": "polo-then-yaris",
+    "category": "follow-up",
+    "turns": [
+      "כמה עולה הפולו שנבחן?",
+      "והאם הוא זול יותר מהיאריס?"
+    ],
+    "expected_tools_called": [],
+    "expected_any": ["find_cars", "search_passages", "compare"],
+    "expected_tools_not_called": [],
+    "tool_arg_any": [
+      {"tool": "find_cars", "family": "toyotayaris"},
+      {"tool": "search_passages", "family": "toyotayaris"},
+      {"tool": "compare", "files": ["yaris-mazda2.md"]}
+    ],
+    "expected_cars": {"any_name": ["יאריס", "פולו"]},
+    "must_include": [
+      {"number": "129000", "file": "polo.md"},
+      {"number": "142000", "file": "yaris-mazda2.md"}
+    ],
+    "expected_behavior": "The follow-up is about the tested Polo versus the Yaris. The tested Polo is 129,000 NIS and the Yaris is 142,000 NIS, so the Polo is cheaper. Resolve the Yaris from the follow-up, not a different car."
+  },
+  {
+    "id": "palisade-then-trim",
+    "category": "follow-up",
+    "turns": [
+      "ספר לי על יונדאי פאליסייד.",
+      "וכמה עולה הקליגרפי?"
+    ],
+    "expected_tools_called": [],
+    "expected_any": ["find_cars", "search_passages", "compare"],
+    "expected_tools_not_called": [],
+    "tool_arg_any": [
+      {"tool": "find_cars", "family": "hyundaipalisade"},
+      {"tool": "search_passages", "family": "hyundaipalisade"},
+      {"tool": "compare", "files": ["palisade.md"]}
+    ],
+    "expected_cars": {"any_name": ["קליגרפי", "Calligraphy"]},
+    "must_include": [
+      {"number": "390000", "file": "palisade.md"},
+      {"number": "411000", "file": "palisade.md"}
+    ],
+    "attribute": [
+      {"number": "390000", "owner": ["קליגרפי", "Calligraphy"], "not_owner": ["אקספלורר", "Explorer"], "required": true}
+    ],
+    "expected_behavior": "The follow-up asks for the Calligraphy price of the Palisade already under discussion. Calligraphy is 390,000 and 411,000 NIS, not the Excellence prices and not the Explorer's listed 390,000."
+  },
+  {
+    "id": "palisade-then-explorer",
+    "category": "follow-up",
+    "turns": [
+      "כמה עולה יונדאי פאליסייד?",
+      "ומה רשום שם על האקספלורר?"
+    ],
+    "expected_tools_called": [],
+    "expected_any": ["search_passages", "compare", "find_cars"],
+    "expected_tools_not_called": [],
+    "tool_arg_any": [
+      {"tool": "search_passages", "family": "hyundaipalisade"},
+      {"tool": "compare", "files": ["palisade.md"]},
+      {"tool": "find_cars", "family": "fordexplorer"}
+    ],
+    "expected_cars": {"any_name": ["אקספלורר", "Explorer"]},
+    "must_include": [{"number": "365000", "file": "palisade.md"}],
+    "attribute": [
+      {"number": "390000", "owner": ["אקספלורר", "Explorer", "פורד"], "not_owner": ["קליגרפי", "Calligraphy"], "required": false}
+    ],
+    "expected_behavior": "The follow-up asks what the Palisade review says about the Explorer. 365,000 NIS is the Explorer's listed 6-seat price. If 390,000 appears, it is the Explorer's listed 7-seat price from that review, not the tested Calligraphy price. Search the Palisade review, not an Explorer review."
+  },
+  {
+    "id": "suv-list-with-prices",
+    "category": "no-car",
+    "question": "תן לי רכבי פנאי עם המחיר של כל אחד.",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "search_passages", "omit_car": true, "every": true},
+      {"tool": "compare", "omit_car": true, "every": true}
+    ],
+    "expected_cars": {},
+    "must_include_any": [
+      [{"number": "162000", "file": "geely-ex5.md"}],
+      [{"number": "168000", "file": "geely-ex5.md"}],
+      [{"number": "190000", "file": "outlander.md"}],
+      [{"number": "215000", "file": "kodiaq.md"}],
+      [{"number": "350000", "file": "palisade.md"}]
+    ],
+    "expected_behavior": "List reviewed SUVs and keep the prices find_cars returned. Do not delete the prices after a validator rejection. A price such as the Geely EX5 at 162,000 NIS has to stay in the answer."
+  },
+  {
+    "id": "no-repeated-preference-reminder",
+    "category": "follow-up",
+    "turns": [
+      "אני מחפש רכב פנאי.",
+      "כמה עולה הפולו שנבחן?",
+      "וכמה עולה מאזדה 2?"
+    ],
+    "expected_tools_called": [],
+    "expected_any": ["find_cars", "search_passages"],
+    "expected_tools_not_called": [],
+    "tool_arg_any": [
+      {"tool": "find_cars", "family": "mazda2"},
+      {"tool": "search_passages", "family": "mazda2"}
+    ],
+    "expected_cars": {"any_name": ["מאזדה", "Mazda"]},
+    "must_include_any": [
+      [{"number": "126000", "file": "yaris-mazda2.md"}],
+      [{"number": "135000", "file": "yaris-mazda2.md"}]
+    ],
+    "expected_behavior": "The last reply answers the Mazda 2 price. It does not say the Mazda 2 is not an SUV, does not mention רכב פנאי, and does not ask the user to go back to SUVs."
+  },
+  {
+    "id": "trim-of-another-car-in-follow-up",
+    "category": "follow-up",
+    "turns": [
+      "כמה עולה הפולו שנבחן?",
+      "מה עם האקסלנס?"
+    ],
+    "expected_tools_called": [],
+    "expected_any": ["find_cars", "search_passages"],
+    "expected_tools_not_called": [],
+    "tool_arg_any": [
+      {"tool": "find_cars", "family": "hyundaipalisade"},
+      {"tool": "search_passages", "family": "hyundaipalisade"}
+    ],
+    "expected_cars": {"any_name": ["אקסלנס", "Excellence", "פאליסייד"]},
+    "must_include": [{"number": "350000", "file": "palisade.md"}],
+    "attribute": [
+      {"number": "350000", "owner": ["אקסלנס", "Excellence", "פאליסייד"], "not_owner": ["פולו", "Polo"], "required": true}
+    ],
+    "expected_behavior": "Excellence is a Hyundai Palisade trim: 350,000 NIS for 8 seats and 358,000 NIS for 7 seats. Do not look for it inside the Polo review and do not say the Polo has no Excellence trim."
+  },
+  {
+    "id": "preference-one-reminder",
+    "category": "follow-up",
+    "turns": [
+      "אני מחפש רכב פנאי.",
+      "כמה עולה הפולו שנבחן?",
+      "וכמה עולה מאזדה 2?",
+      "ומה עם היאריס?"
+    ],
+    "max_mismatch_mentions": 1,
+    "expected_tools_called": [],
+    "expected_any": ["find_cars", "search_passages"],
+    "expected_tools_not_called": [],
+    "tool_arg_any": [
+      {"tool": "find_cars", "family": "toyotayaris"},
+      {"tool": "search_passages", "family": "toyotayaris"}
+    ],
+    "expected_cars": {"any_name": ["יאריס", "Yaris"]},
+    "must_include_any": [
+      [{"number": "142000", "file": "yaris-mazda2.md"}]
+    ],
+    "expected_behavior": "The last reply answers the Yaris price. Across the whole conversation, an SUV mismatch is mentioned in at most one assistant reply. The last reply does not say the Yaris is not an SUV and does not ask the user to go back."
+  },
+  {
+    "id": "preference-broadens",
+    "category": "follow-up",
+    "turns": [
+      "אני מחפש רכב פנאי.",
+      "כמה עולה הפולו שנבחן?",
+      "וכמה עולה מאזדה 2?",
+      "ומה עם היאריס?",
+      "מה אתה ממליץ?"
+    ],
+    "max_mismatch_mentions": 1,
+    "expected_tools_called": [],
+    "expected_tools_not_called": [],
+    "expected_cars": {},
+    "expected_behavior": "The last reply is a recommendation. It either includes city cars (Polo, Mazda 2, or Yaris) together with SUVs, or it asks once whether the user is open to other body types. It does not tell the user to go back to SUVs only."
+  },
+  {
+    "id": "make-peugeot-he",
+    "category": "make",
+    "question": "כמה עולה פיג'ו?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "peugeot408"},
+      {"tool": "search_passages", "family": "peugeot408"}
+    ],
+    "expected_cars": {"any_name": ["408", "פיג'ו", "Peugeot"]},
+    "must_include_any": [
+      [{"number": "170000", "file": "peugeot-408-fl.md"}],
+      [{"number": "175000", "file": "peugeot-408-fl.md"}]
+    ],
+    "expected_behavior": "פיג'ו is the make. The only reviewed Peugeot is the 408. Say we have the Peugeot 408 review and answer about that car, including a price from the review (170,000 or 175,000 NIS). Do not say Peugeot is missing."
+  },
+  {
+    "id": "make-peugeot-en",
+    "category": "make",
+    "question": "What does a Peugeot cost?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "peugeot408"},
+      {"tool": "search_passages", "family": "peugeot408"}
+    ],
+    "expected_cars": {"any_name": ["408", "Peugeot"]},
+    "must_include_any": [
+      [{"number": "170000", "file": "peugeot-408-fl.md"}],
+      [{"number": "175000", "file": "peugeot-408-fl.md"}]
+    ],
+    "expected_behavior": "Peugeot is the make. The only reviewed Peugeot is the 408. Say we have the Peugeot 408 review and give a price from that review (170,000 or 175,000 NIS). Do not say Peugeot is missing."
+  },
+  {
+    "id": "make-peugeot-variant",
+    "category": "make",
+    "question": "כמה עולה פג'ו?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "peugeot408"},
+      {"tool": "search_passages", "family": "peugeot408"}
+    ],
+    "expected_cars": {"any_name": ["408", "פג'ו", "פיג'ו", "Peugeot"]},
+    "must_include_any": [
+      [{"number": "170000", "file": "peugeot-408-fl.md"}],
+      [{"number": "175000", "file": "peugeot-408-fl.md"}]
+    ],
+    "expected_behavior": "פג'ו is a spelling of the Peugeot make. Answer about the Peugeot 408, the only reviewed Peugeot, and give a price from that review. Do not say it is missing."
+  },
+  {
+    "id": "make-hyundai-he",
+    "category": "make",
+    "question": "מה יש לך מיונדאי?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": ["search_passages", "compare"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "candidates": ["hyundaipalisade", "hyundaitucson"]}
+    ],
+    "expected_cars": {"any_name": ["פאליסייד", "טוסון", "Palisade", "Tucson", "יונדאי"]},
+    "expected_behavior": "Hyundai has two reviewed models, the Palisade and the Tucson. List both and ask which one. Do not pick one and do not search yet."
+  },
+  {
+    "id": "make-hyundai-en",
+    "category": "make",
+    "question": "What do you have from Hyundai?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": ["search_passages", "compare"],
+    "expected_tool_args": [
+      {"tool": "find_cars", "candidates": ["hyundaipalisade", "hyundaitucson"]}
+    ],
+    "expected_cars": {"any_name": ["Palisade", "Tucson", "Hyundai"]},
+    "expected_behavior": "Hyundai has two reviewed models, the Palisade and the Tucson. List both and ask which one. Do not pick one and do not search yet."
+  },
+  {
+    "id": "insist-after-miss",
+    "category": "unknown",
+    "turns": [
+      "מה המחיר של מאזדה CX-5?",
+      "בטוח שאין? תבדוק שוב"
+    ],
+    "expected_tools_called": ["search_passages"],
+    "expected_tools_not_called": ["find_cars"],
+    "expected_tool_args": [
+      {"tool": "search_passages", "omit_car": true}
+    ],
+    "expected_cars": {"any_name": ["CX-5", "סי-אקס"]},
+    "no_prices": true,
+    "expected_behavior": "The last reply says it could not find the Mazda CX-5 by that name. It does not say it is sure there is no such car, and it does not say בטוח. It does not give the CX-5 a price. Anything else it mentions is only a suggestion."
+  },
+  {
+    "id": "make-after-add",
+    "category": "make",
+    "question": "נוספה ביקורת על פיג'ו. מה אתה יודע על פיג'ו?",
+    "expected_tools_called": ["find_cars"],
+    "expected_tools_not_called": [],
+    "expected_tool_args": [
+      {"tool": "find_cars", "family": "peugeot408"},
+      {"tool": "search_passages", "family": "peugeot408"}
+    ],
+    "expected_cars": {"any_name": ["408", "פיג'ו", "Peugeot"]},
+    "must_include_any": [
+      [{"number": "170000", "file": "peugeot-408-fl.md"}],
+      [{"number": "175000", "file": "peugeot-408-fl.md"}]
+    ],
+    "expected_behavior": "The Peugeot review was added to the catalog. Asked by the make alone, answer about the Peugeot 408, the only reviewed Peugeot, and give a price from that review. Do not say Peugeot is missing."
+  }
+]
